@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://ruby.taobao.org'
 
 gem 'rails', '3.2.12'
 
@@ -7,6 +7,13 @@ gem 'rails', '3.2.12'
 
 gem 'sqlite3'
 
+# REST api
+gem 'grape', '~> 0.4.1'
+
+# http client
+gem 'httparty', '~> 0.11.0'
+
+gem 'exception_notification'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -21,6 +28,15 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'multi_json', '~> 1.7.2'
+
+group :development do
+  gem 'pry-rails'
+  gem "pry-nav"
+
+  gem "better_errors"
+  gem "binding_of_caller"
+end
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
