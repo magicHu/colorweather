@@ -1,0 +1,5 @@
+$url = "http://api.map.baidu.com/geocoder?output=json&key=37492c0ee6f924cb5e934fa08c6b1676&location=".$_GET['lat'].",".$_GET['lng'];
+      $contents = file_get_contents($url);
+  $data=json_decode($contents,true);
+        
+  $keyword = $data['result']['addressComponent']['city'];

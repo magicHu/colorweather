@@ -1,5 +1,7 @@
 module WeatherHelper
 
+  include CityCode
+
   def get_weather_info_by_cityno(city_no)
     begin
       today_weather_info = MultiJson.load(HTTParty.get("http://www.weather.com.cn/data/sk/#{city_no}.html"))
@@ -27,8 +29,8 @@ module WeatherHelper
 
       weather_info['forecasts'] = []
       (1...7).each do |i|
-        w = {'temp' => forecasts["temp#{i}"], 'weather' => forecasts["weather#{i}"], 'img' => forecasts["img#{i * 2 - 1}"], 'wind' => forecasts["wind#{i}"]}
-        weather_info['forecasts'] << w
+        weather_info['forecasts'] << 
+          {'temp' => forecasts["temp#{i}"], 'weather' => forecasts["weather#{i}"], 'img' => forecasts["img#{i * 2 - 1}"], 'wind' => forecasts["wind#{i}"]}
       end
 
       return weather_info
@@ -41,12 +43,18 @@ module WeatherHelper
   def get_city_by_lat_lon(lat, lng)
     begin
       url = "http://api.map.baidu.com/geocoder?output=json&key=37492c0ee6f924cb5e934fa08c6b1676&location=#{lat},#{lng}"
-      response = MultiJson.load(HTTParty.get(url))
+      response = MultiJson.load(HTTParty.get(url).body)
+      
       city_name = response['result']['addressComponent']['city']
 
-      @@CITY_CODE.each_pair do |key, value|
-        return key if value == city_name
+      if city_name
+        @@CITY_CODE.each_pair do |key, value|
+          if city_name.start_with? value
+            return key 
+          end
+        end
       end
+      nil
     rescue Exception => e
       nil
     end
