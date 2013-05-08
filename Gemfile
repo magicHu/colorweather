@@ -13,6 +13,9 @@ gem 'grape', '~> 0.4.1'
 # http client
 gem 'httparty', '~> 0.11.0'
 
+# json
+gem 'multi_json', '~> 1.7.2'
+
 gem 'exception_notification'
 
 # Gems used only for assets and not required
@@ -28,7 +31,6 @@ group :assets do
 end
 
 gem 'jquery-rails'
-gem 'multi_json', '~> 1.7.2'
 
 group :development do
   gem 'pry-rails'
@@ -36,6 +38,16 @@ group :development do
 
   gem "better_errors"
   gem "binding_of_caller"
+end
+
+group :test, :development do
+  gem "rspec-rails", "~> 2.0"
+end
+
+group :test do 
+  gem 'factory_girl_rails'
+  gem 'capybara'
+  gem 'guard-rspec'
 end
 
 # To use ActiveModel has_secure_password
