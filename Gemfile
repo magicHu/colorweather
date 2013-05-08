@@ -31,6 +31,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'dalli'
 
 group :development do
   gem 'pry-rails'
@@ -48,6 +49,7 @@ group :test do
   gem 'factory_girl_rails'
   gem 'capybara'
   gem 'guard-rspec'
+  gem 'rb-fsevent', '~> 0.9'
 end
 
 # To use ActiveModel has_secure_password
