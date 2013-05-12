@@ -1,3 +1,4 @@
+# encoding: utf-8
 require 'city_code'
 
 module Weather
