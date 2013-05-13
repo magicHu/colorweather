@@ -4,8 +4,8 @@ development:
   reconnect: false
   database: colorweather_development
   pool: 5
-  username: root
-  password: root
+  username: colorweather
+  password: 
   host: localhost
 
 test: 
@@ -14,8 +14,8 @@ test:
   reconnect: false
   database: colorweather_test
   pool: 5
-  username: root
-  password: root
+  username: colorweather
+  password: 
   host: localhost
 
 production:
@@ -23,5 +23,5 @@ production:
   encoding: utf8
   database: colorweather_production
   pool: 5
-  username: root
-  password: root
+  username: colorweather
+  password: 
