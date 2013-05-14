@@ -32,14 +32,14 @@ module Weather
       
       desc 'get version info'
       get :version do
-
+        Setting.last
       end
 
       desc 'weixin callback'
       get :weixin do
         "hello world"
       end
-    end
 
+    end
   end
 end
