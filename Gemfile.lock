@@ -1,5 +1,5 @@
 GEM
-  remote: http://rubygems.org/
+  remote: http://ruby.taobao.org/
   specs:
     actionmailer (3.2.12)
       actionpack (= 3.2.12)
@@ -139,6 +139,7 @@ GEM
     multi_xml (0.5.3)
     mysql2 (0.3.11)
     nested_form (0.3.1)
+    newrelic_rpm (3.6.2.96)
     nokogiri (1.5.9)
     orm_adapter (0.4.0)
     polyglot (0.3.3)
@@ -279,6 +280,7 @@ DEPENDENCIES
   jquery-rails
   multi_json (~> 1.7.2)
   mysql2
+  newrelic_rpm
   pry-nav
   pry-rails
   rails (= 3.2.12)

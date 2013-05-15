@@ -1,5 +1,5 @@
-#source 'http://ruby.taobao.org'
-source 'http://rubygems.org/'
+source 'http://ruby.taobao.org'
+#source 'http://rubygems.org/'
 
 gem 'rails', '3.2.12'
 
@@ -27,6 +27,8 @@ gem 'simple_form'
 
 gem 'exception_notification'
 
+# Monitoring
+gem 'newrelic_rpm'
 
 # Gems used only for assets and not required
 # in production environments by default.
