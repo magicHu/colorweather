@@ -8,6 +8,7 @@ module Weather
     format :json
 
     helpers WeatherHelper
+    helpers WechatHelper
 
     resource :weather do
       
@@ -37,7 +38,28 @@ module Weather
 
       desc 'weixin callback'
       get :weixin do
-        "hello world"
+        message = <<-EOF 
+          <links>
+
+          <item>
+            <title>Title 1</title>
+            <url>http://www.example.com/url-1</url>
+          </item>
+
+          <item>
+           <title>Title 2</title>
+           <url>http://www.example.com/url-2</url>
+          </item>
+
+          <item>
+            <title>Title 3</title>
+            <url>http://www.example.com/url-3</url>
+          </item>
+
+        </links>
+        EOF
+
+        get_city_info_as_weather_format(message)
       end
 
     end
