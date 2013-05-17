@@ -5,6 +5,8 @@ module WeatherHelper
 
   def get_weather_info_by_cityno(city_no)
     begin
+      raise unless city_no
+
       Rails.cache.fetch([:weather, city_no], expires_in: 30.minutes) do
         today_weather_info = MultiJson.load(HTTParty.get("http://www.weather.com.cn/data/sk/#{city_no}.html"))
         week_weather_info = MultiJson.load(HTTParty.get("http://m.weather.com.cn/data/#{city_no}.html"))
@@ -40,7 +42,7 @@ module WeatherHelper
 
     rescue Exception => e
       Grape::API.logger.error e
-      error!('Unexpect result', 400)
+      error!('Unexpect city info', 400)
     end
   end
 
@@ -52,16 +54,7 @@ module WeatherHelper
         
         city_name = response['result']['addressComponent']['city']
 
-        city_no = nil
-        if city_name
-          @@CITY_CODE.each_pair do |key, value|
-            if city_name.start_with? value
-              city_no = key.dup
-              break
-            end
-          end
-        end
-        city_no
+        get_city_no_by_name(city_name)
       end
     rescue Exception => e
       Grape::API.logger.error e
@@ -69,4 +62,14 @@ module WeatherHelper
     end
   end
 
+  def get_city_no_by_name(city_name)
+      if city_name
+        @@CITY_CODE.each_pair do |key, value|
+          if city_name.start_with? value
+            return key.dup
+          end
+        end
+      end
+      nil
+  end
 end

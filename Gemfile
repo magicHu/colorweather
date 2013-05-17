@@ -23,6 +23,8 @@ gem 'devise', '~> 2.2.3'
 # admin dashboard
 gem 'rails_admin'
 
+gem "active_model_serializers", "~> 0.8.0"
+
 gem 'simple_form'
 
 gem 'exception_notification'
