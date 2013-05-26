@@ -1,29 +1,21 @@
 # encoding: utf-8
 module WechatHelper
+  include WeatherHelper
 
-  def get_city_info_as_weather_format(xml)
-    doc = Nokogiri::XML(xml)
+  def get_city_weather_weixin(request_body)
+    begin
+      binding.pry
+      request_params = parse_weixin_request_body(request_body)
 
-    datas = []
-    doc.xpath('//links/item').each do |node| 
-      datas << {"title" => node.xpath('title').text, "url" => node.xpath('url').text}
-    end
-    datas
-  end
-
-  def response_weather_to_weixin(request_body)
-    request_params = form_weather_request_format(request_body)
-
-    if 'text' == request_params[:msg_type]
-      city_no = get_city_no_by_name(request_params['city_name'])
-      return default_response unless city_no
-
-      weather_info = get_weather_info_by_cityno(city_no)
-      return to_weixin_response_format(request_params, weather_info)
+      if 'text' == request_params[:msg_type]
+        weather_info = get_weather(request_params[:city_name])
+        return response_weixin_format(request_params, weather_info)
+      end
+    rescue Exception => e
+      return default_response
     end
   end
 
-  def form_weather_request_format(request_body)
 =begin
 <xml>
  <ToUserName><![CDATA[toUser]]></ToUserName>
@@ -34,64 +26,49 @@ module WechatHelper
  <MsgId>1234567890123456</MsgId>
  </xml>
 =end
+  def parse_weixin_request_body(request_body)
+    node = Nokogiri::XML(request_body).xpath('//xml')
+
     {
-      :to_user_name => request_body['ToUserName'],
-      :from_user_name => request_body['FromUserName'],
-      :create_time => request_body['CreateTime'],
-      :msg_type => request_body['MsgType']
-      :city_name => request_body['Content']
-      :msg_id => request_body['MsgId']
+      :to_user_name => node.xpath('ToUserName').text,
+      :from_user_name => node.xpath('FromUserName').text,
+      :create_time => node.xpath('CreateTime').text,
+      :msg_type => node.xpath('MsgType').text,
+      :city_name => node.xpath('Content').text,
+      :msg_id => node.xpath('MsgId').text
     }
   end
 
-  def to_weixin_response_format(request_params, weather_info)
-    $img0 = image_big_url(weather_info['img1']);
-    $img1 = image_url(weather_info['img1']);
-    $img2 = image_url(weather_info['img2']);
-    $img3 = image_url(weather_info['img3']);
+  def response_weixin_format(request_params, weather_info)
+    weather_infos = []
+    weather_infos << { :weather => "", :img => image_big_url(weather_info['img1']) }
+    weather_infos << { :weather => "", :img => image_url(weather_info['img1']) }
+    weather_infos << { :weather => "", :img => image_url(weather_info['img2']) }
+    weather_infos << { :weather => "", :img => image_url(weather_info['img3']) }
 
-    # $fromUsername, $toUsername, $time, 
-    # $data['city'], $img0, $data['w1'], $img1,  $data['w2'], $img2,  $data['w3'], $img3);
+    builder = Nokogiri::XML::Builder.new do |xml|
+      xml.root {
+        xml.ToUserName request_params[:from_user_name]
+        xml.FromUserName request_params[:to_user_name]
+        xml.CreateTime Time.now
+        xml.MsgType "news"
+        xml.ArticleCount weather_infos.length
 
-=begin
-"<xml>
- <ToUserName><![CDATA[%s]]></ToUserName>
- <FromUserName><![CDATA[%s]]></FromUserName>
- <CreateTime>%s</CreateTime>
- <MsgType><![CDATA[news]]></MsgType>
- <Content><![CDATA[]]></Content>
- <ArticleCount>4</ArticleCount>
- <Articles>
- <item>
- <Title><![CDATA[%s]]></Title>
- <Discription><![CDATA[]]></Discription>
- <PicUrl><![CDATA[%s]]></PicUrl>
- <Url><![CDATA[http://item.taobao.com/item.htm?id=23879048548]]></Url>
- </item>
- <item>
- <Title><![CDATA[%s]]></Title>
- <Discription><![CDATA[]]></Discription>
- <PicUrl><![CDATA[%s]]></PicUrl>
- <Url><![CDATA[http://item.taobao.com/item.htm?id=23879048548]]></Url>
- </item>
- <item>
- <Title><![CDATA[%s]]></Title>
- <Discription><![CDATA[]]></Discription>
- <PicUrl><![CDATA[%s]]></PicUrl>
- <Url><![CDATA[http://item.taobao.com/item.htm?id=23879048548]]></Url>
- </item>
- <item>
- <Title><![CDATA[%s]]></Title>
- <Discription><![CDATA[]]></Discription>
- <PicUrl><![CDATA[%s]]></PicUrl>
- <Url><![CDATA[http://item.taobao.com/item.htm?id=23879048548]]></Url>
- </item>
- 
- </Articles>
- <FuncFlag>0</FuncFlag>
- </xml> "
-=end
+        xml.Articles {
+          weather_infos.each do |weather_info|
+            xml.Item {
+              xml.Title weather_info.weather
+              xml.Discription ""
+              xml.PicUrl weather_info.img
+              xml.Url "http://item.taobao.com/item.htm?id=23879048548"
+            }
+          end
+        }
 
+        xml.FuncFlag 0
+      }
+    end
+    builder.to_xml
   end
 
   def check_sign(params) 
@@ -106,6 +83,53 @@ module WechatHelper
     end
   end
 
+  def get_weather(city_name)
+    city_no = get_city_no_by_name(request_params[:city_name])
+    return default_response unless city_no
+
+    weather_info = get_weather_info_by_cityno(city_no)
+    return parse_weixin_weather_info(weather_info)
+  end
+
+  def parse_weather_info(response_body)
+    week_weather_info = response_body[:weatherinfo]
+
+    today_temp = parse_temp(week_weather_info[:temp1])
+    tomorrow_temp = parse_temp(week_weather_info[:temp2])
+    after_tomorrow_temp = parse_temp(week_weather_info[:temp3])
+
+    wind = parse_wind(week_weather_info[:wind1])
+
+    {
+      :city => week_weather_info[:city],
+      #"city" =>$data['city'].' '.$time.' '.$data['weather1'],
+      :w1 => "今日 #{week_weather_info[:weather1]} , #{today_temp}℃ , #{wind}",
+      :w2 => "明天 #{week_weather_info[:weather2]} , #{tomorrow_temp}℃",
+      :w3 => "后天 #{week_weather_info[:weather3]} , #{after_tomorrow_temp}℃",
+      :img1 => week_weather_info[:img1],
+      :img2 => week_weather_info[:img3],
+      :img3 => week_weather_info[:img5]
+    }
+  end
+
+  # "19℃~22℃" => "19/22"
+  def parse_temp(temp)
+    return temp_info.replace("℃", "").replace("~", "/")
+  end
+
+  def parse_wind(wind)
+    wind.gsub(/转.*/, '')
+  end
+
+  def parse_date(date)
+    return date.gsub(/\d*年/, '')
+  end
+
+  def parse_week(week)
+    return week.gsub(/星期/, "周")
+  end
+
+  private
   def token
     'colorweather'
   end

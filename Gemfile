@@ -11,30 +11,31 @@ gem 'mysql2'
 
 # REST api
 gem 'grape', '~> 0.4.1'
-
 # http client
 gem 'httparty', '~> 0.11.0'
 
 # json
 gem 'multi_json', '~> 1.7.2'
+gem "active_model_serializers", "~> 0.8.0"
 
 # authentication
 gem 'devise', '~> 2.2.3'
 # admin dashboard
 gem 'rails_admin'
 
-gem "active_model_serializers", "~> 0.8.0"
-
 gem 'simple_form'
 
 gem 'exception_notification'
 
-# monitoring
+# performance monitoring
 gem 'newrelic_rpm'
+gem 'newrelic-grape'
 
-gem 'jquery-rails'
 # memcached
 gem 'dalli'
+
+
+gem 'jquery-rails'
 
 # Gems used only for assets and not required
 # in production environments by default.

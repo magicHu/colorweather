@@ -8,7 +8,7 @@ module Weather
     format :json
 
     helpers WeatherHelper
-    helpers WechatHelper
+    #helpers WechatHelper
 
     resource :weather do
       
@@ -20,7 +20,7 @@ module Weather
         get_weather_info_by_cityno(params[:cityno])
       end
 
-      desc 'get weather by lat and lng'
+      desc '根据经纬度获取天气信息'
       get 'lat/:lat/lng/:lng', :requirements => {:lat => /\-*\d+.\d+/, :lng => /\-*\d+.\d+/} do
         city_no = get_city_by_lat_lon(params[:lat], params[:lng])
 
@@ -31,35 +31,14 @@ module Weather
         get_weather_info_by_cityno(city_no)
       end
       
-      desc 'get version info'
+      desc '获取版本信息'
       get :version do
         Setting.last
       end
 
-      desc 'weixin callback'
+      desc '彩虹天气微信接口'
       get :weixin do
-        message = <<-EOF 
-          <links>
-
-          <item>
-            <title>Title 1</title>
-            <url>http://www.example.com/url-1</url>
-          </item>
-
-          <item>
-           <title>Title 2</title>
-           <url>http://www.example.com/url-2</url>
-          </item>
-
-          <item>
-            <title>Title 3</title>
-            <url>http://www.example.com/url-3</url>
-          </item>
-
-        </links>
-        EOF
-
-        get_city_info_as_weather_format(message)
+        get_city_weather_weixin(request.body)
       end
 
     end
