@@ -4,7 +4,6 @@ module WechatHelper
 
   def get_city_weather_weixin(request_body)
     begin
-      binding.pry
       request_params = parse_weixin_request_body(request_body)
 
       if 'text' == request_params[:msg_type]
@@ -16,16 +15,6 @@ module WechatHelper
     end
   end
 
-=begin
-<xml>
- <ToUserName><![CDATA[toUser]]></ToUserName>
- <FromUserName><![CDATA[fromUser]]></FromUserName> 
- <CreateTime>1348831860</CreateTime>
- <MsgType><![CDATA[text]]></MsgType>
- <Content><![CDATA[this is a test]]></Content>
- <MsgId>1234567890123456</MsgId>
- </xml>
-=end
   def parse_weixin_request_body(request_body)
     node = Nokogiri::XML(request_body).xpath('//xml')
 
@@ -135,7 +124,9 @@ module WechatHelper
   end
 
   def default_response
-    "请输入城市名称，比如:北京,上海,纽约,伦敦"
+    Rails.cache.fetch([:weixin, :defaultresponse], expires_in: 1.day) do
+      "请输入城市名称，比如:北京,上海,纽约,伦敦"
+    end
   end
 
   @@IMAGE_IDS = ["32","34","26","37","45","45","5","9",

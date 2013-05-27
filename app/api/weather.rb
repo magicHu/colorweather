@@ -8,7 +8,7 @@ module Weather
     format :json
 
     helpers WeatherHelper
-    #helpers WechatHelper
+    helpers WechatHelper
 
     resource :weather do
       
@@ -37,10 +37,19 @@ module Weather
       end
 
       desc '彩虹天气微信接口'
-      get :weixin do
+      post :weixin do
+        request_body = <<-EOF
+          <xml>
+            <ToUserName><![CDATA[toUser]]></ToUserName>
+            <FromUserName><![CDATA[fromUser]]></FromUserName> 
+            <CreateTime>1348831860</CreateTime>
+            <MsgType><![CDATA[text]]></MsgType>
+            <Content><![CDATA[this is a test]]></Content>
+            <MsgId>1234567890123456</MsgId>
+          </xml>
+        EOF
         get_city_weather_weixin(request.body)
       end
-
     end
   end
 end
