@@ -36,18 +36,8 @@ module Weather
       end
 
       desc '彩虹天气微信接口'
-      get :weixin do
-        request_body = <<-EOF 
-        <xml>
-         <ToUserName><![CDATA[john]]></ToUserName>
-         <FromUserName><![CDATA[jobs]]></FromUserName> 
-         <CreateTime>1348831860</CreateTime>
-         <MsgType><![CDATA[text]]></MsgType>
-         <Content><![CDATA[上海]]></Content>
-         <MsgId>1234567890123456</MsgId>
-       </xml>
-      EOF
-        get_city_weather_weixin(request_body).to_xml
+      post :weixin do
+        get_city_weather_weixin(request.body.read).to_xml
       end
     end
   end

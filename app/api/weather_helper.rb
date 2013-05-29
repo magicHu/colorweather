@@ -3,18 +3,14 @@ module WeatherHelper
 
   include CityCode
 
-  @@CACHE_EXPIRES_IN = 10.minutes
-
   def get_weather_info_by_cityno(city_no)
     begin
       raise unless city_no
 
-      binding.pry
-      Rails.cache.fetch([:weather, city_no], expires_in: @@CACHE_EXPIRES_IN) do
+      Rails.cache.fetch([:weather, city_no], expires_in: 10.minutes) do
         today_weather_info = get_tody_weather_info(city_no)
         week_weather_info = get_week_weather_info(city_no)
 
-        binding.pry
         weather_info = {}
 
         # today
@@ -51,18 +47,14 @@ module WeatherHelper
   end
 
   def get_week_weather_info(city_no)
-    Rails.cache.fetch([:weather, :week, city_no], expires_in: @@CACHE_EXPIRES_IN) do
-      url = "http://m.weather.com.cn/data/#{city_no}.html"
-      puts url
-      MultiJson.load(HTTParty.get())
+    Rails.cache.fetch([:weather, :week, city_no], expires_in: 10.minutes) do
+      MultiJson.load(HTTParty.get("http://m.weather.com.cn/data/#{city_no}.html"))
     end
   end
 
   def get_tody_weather_info(city_no)
-    Rails.cache.fetch([:weather, :today, city_no], expires_in: @@CACHE_EXPIRES_IN) do
-      url = "http://www.weather.com.cn/data/sk/#{city_no}.html"
-      puts url
-      MultiJson.load(HTTParty.get())
+    Rails.cache.fetch([:weather, :today, city_no], expires_in: 10.minutes) do
+      MultiJson.load(HTTParty.get("http://www.weather.com.cn/data/sk/#{city_no}.html"))
     end
   end
 
