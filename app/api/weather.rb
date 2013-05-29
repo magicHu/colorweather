@@ -5,8 +5,7 @@ module Weather
   class API < Grape::API
     
     version 'v1', :using => :header, :vendor => 'colorweather'
-    format :json
-
+    format  :txt
     helpers WeatherHelper
     helpers WechatHelper
 
@@ -16,8 +15,8 @@ module Weather
       params do
         requires :cityno, :type => String, :desc => "请输入城市编号."
       end
-      get 'city/:cityno'do
-        get_weather_info_by_cityno(params[:cityno])
+      get 'city/:cityno' do
+        get_weather_info_by_cityno(params[:cityno]).to_json
       end
 
       desc '根据经纬度获取天气信息'
@@ -28,27 +27,27 @@ module Weather
           error!('Unexpect lat and lng', 400)
         end
 
-        get_weather_info_by_cityno(city_no)
+        get_weather_info_by_cityno(city_no).to_json
       end
       
       desc '获取版本信息'
       get :version do
-        Setting.last
+        Setting.last.to_json
       end
 
       desc '彩虹天气微信接口'
-      post :weixin do
-        request_body = <<-EOF
-          <xml>
-            <ToUserName><![CDATA[toUser]]></ToUserName>
-            <FromUserName><![CDATA[fromUser]]></FromUserName> 
-            <CreateTime>1348831860</CreateTime>
-            <MsgType><![CDATA[text]]></MsgType>
-            <Content><![CDATA[this is a test]]></Content>
-            <MsgId>1234567890123456</MsgId>
-          </xml>
-        EOF
-        get_city_weather_weixin(request.body)
+      get :weixin do
+        request_body = <<-EOF 
+        <xml>
+         <ToUserName><![CDATA[john]]></ToUserName>
+         <FromUserName><![CDATA[jobs]]></FromUserName> 
+         <CreateTime>1348831860</CreateTime>
+         <MsgType><![CDATA[text]]></MsgType>
+         <Content><![CDATA[上海]]></Content>
+         <MsgId>1234567890123456</MsgId>
+       </xml>
+      EOF
+        get_city_weather_weixin(request_body).to_xml
       end
     end
   end

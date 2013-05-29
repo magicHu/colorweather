@@ -7,10 +7,11 @@ module WechatHelper
       request_params = parse_weixin_request_body(request_body)
 
       if 'text' == request_params[:msg_type]
-        weather_info = get_weather(request_params[:city_name])
+        weather_info = get_weather_info(request_params[:city_name])
         return response_weixin_format(request_params, weather_info)
       end
-    rescue Exception => e
+    rescue Exception => e 
+      puts e
       return default_response
     end
   end
@@ -30,34 +31,33 @@ module WechatHelper
 
   def response_weixin_format(request_params, weather_info)
     weather_infos = []
-    weather_infos << { :weather => "", :img => image_big_url(weather_info['img1']) }
-    weather_infos << { :weather => "", :img => image_url(weather_info['img1']) }
-    weather_infos << { :weather => "", :img => image_url(weather_info['img2']) }
-    weather_infos << { :weather => "", :img => image_url(weather_info['img3']) }
+    weather_infos << { :weather => weather_info[:city], :img => image_big_url(weather_info[:img1].to_i) }
+    weather_infos << { :weather => weather_info[:w1], :img => image_url(weather_info[:img1].to_i) }
+    weather_infos << { :weather => weather_info[:w2], :img => image_url(weather_info[:img2].to_i) }
+    weather_infos << { :weather => weather_info[:w3], :img => image_url(weather_info[:img3].to_i) }
 
-    builder = Nokogiri::XML::Builder.new do |xml|
-      xml.root {
-        xml.ToUserName request_params[:from_user_name]
-        xml.FromUserName request_params[:to_user_name]
-        xml.CreateTime Time.now
-        xml.MsgType "news"
-        xml.ArticleCount weather_infos.length
+    builder = Nokogiri::XML::Builder.new(:encoding => 'UTF-8') do |xml|
+      xml.xml {
+        xml.ToUserName { xml.cdata request_params[:from_user_name] }
+        xml.FromUserName { xml.cdata request_params[:to_user_name] }
+        xml.CreateTime { Time.now.to_i }
+        xml.MsgType { xml.cdata "news" }
+        xml.ArticleCount { xml.cdata weather_infos.length }
 
         xml.Articles {
           weather_infos.each do |weather_info|
             xml.Item {
-              xml.Title weather_info.weather
-              xml.Discription ""
-              xml.PicUrl weather_info.img
-              xml.Url "http://item.taobao.com/item.htm?id=23879048548"
+              xml.Title { xml.cdata weather_info[:weather] }
+              xml.Discription { xml.cdata "" }
+              xml.PicUrl { xml.cdata weather_info[:img] }
+              xml.Url { xml.cdata "http://item.taobao.com/item.htm?id=23879048548" }
             }
           end
         }
-
         xml.FuncFlag 0
       }
     end
-    builder.to_xml
+    builder
   end
 
   def check_sign(params) 
@@ -72,38 +72,38 @@ module WechatHelper
     end
   end
 
-  def get_weather(city_name)
-    city_no = get_city_no_by_name(request_params[:city_name])
+  def get_weather_info(city_name)
+    city_no = get_city_no_by_name(city_name)
     return default_response unless city_no
 
-    weather_info = get_weather_info_by_cityno(city_no)
-    return parse_weixin_weather_info(weather_info)
+    week_weather_info = get_week_weather_info(city_no)
+    return parse_weather_info(week_weather_info)
   end
 
-  def parse_weather_info(response_body)
-    week_weather_info = response_body[:weatherinfo]
+  def parse_weather_info(weather_info)
+    week_weather_info = weather_info["weatherinfo"]
+    today_temp = parse_temp(week_weather_info["temp1"])
+    tomorrow_temp = parse_temp(week_weather_info["temp2"])
+    after_tomorrow_temp = parse_temp(week_weather_info["temp3"])
 
-    today_temp = parse_temp(week_weather_info[:temp1])
-    tomorrow_temp = parse_temp(week_weather_info[:temp2])
-    after_tomorrow_temp = parse_temp(week_weather_info[:temp3])
-
-    wind = parse_wind(week_weather_info[:wind1])
+    wind = parse_wind(week_weather_info["wind1"])
 
     {
-      :city => week_weather_info[:city],
+      :city => week_weather_info["city"],
       #"city" =>$data['city'].' '.$time.' '.$data['weather1'],
-      :w1 => "今日 #{week_weather_info[:weather1]} , #{today_temp}℃ , #{wind}",
-      :w2 => "明天 #{week_weather_info[:weather2]} , #{tomorrow_temp}℃",
-      :w3 => "后天 #{week_weather_info[:weather3]} , #{after_tomorrow_temp}℃",
-      :img1 => week_weather_info[:img1],
-      :img2 => week_weather_info[:img3],
-      :img3 => week_weather_info[:img5]
+      :w1 => "今日 #{week_weather_info["weather1"]} , #{today_temp}, #{wind}",
+      :w2 => "明天 #{week_weather_info["weather2"]} , #{tomorrow_temp}",
+      :w3 => "后天 #{week_weather_info["weather3"]} , #{after_tomorrow_temp}",
+      :img1 => week_weather_info["img1"],
+      :img2 => week_weather_info["img3"],
+      :img3 => week_weather_info["img5"]
     }
   end
 
+  private
   # "19℃~22℃" => "19/22"
   def parse_temp(temp)
-    return temp_info.replace("℃", "").replace("~", "/")
+    temp.gsub(/℃/, "").gsub(/~/, "/") + "℃"
   end
 
   def parse_wind(wind)
@@ -118,7 +118,6 @@ module WechatHelper
     return week.gsub(/星期/, "周")
   end
 
-  private
   def token
     'colorweather'
   end

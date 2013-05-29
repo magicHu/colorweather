@@ -3,14 +3,18 @@ module WeatherHelper
 
   include CityCode
 
+  @@CACHE_EXPIRES_IN = 10.minutes
+
   def get_weather_info_by_cityno(city_no)
     begin
       raise unless city_no
 
-      Rails.cache.fetch([:weather, city_no], expires_in: 30.minutes) do
-        today_weather_info = MultiJson.load(HTTParty.get("http://www.weather.com.cn/data/sk/#{city_no}.html"))
-        week_weather_info = MultiJson.load(HTTParty.get("http://m.weather.com.cn/data/#{city_no}.html"))
+      binding.pry
+      Rails.cache.fetch([:weather, city_no], expires_in: @@CACHE_EXPIRES_IN) do
+        today_weather_info = get_tody_weather_info(city_no)
+        week_weather_info = get_week_weather_info(city_no)
 
+        binding.pry
         weather_info = {}
 
         # today
@@ -43,6 +47,22 @@ module WeatherHelper
     rescue Exception => e
       Grape::API.logger.error e
       error!('Unexpect city info', 400)
+    end
+  end
+
+  def get_week_weather_info(city_no)
+    Rails.cache.fetch([:weather, :week, city_no], expires_in: @@CACHE_EXPIRES_IN) do
+      url = "http://m.weather.com.cn/data/#{city_no}.html"
+      puts url
+      MultiJson.load(HTTParty.get())
+    end
+  end
+
+  def get_tody_weather_info(city_no)
+    Rails.cache.fetch([:weather, :today, city_no], expires_in: @@CACHE_EXPIRES_IN) do
+      url = "http://www.weather.com.cn/data/sk/#{city_no}.html"
+      puts url
+      MultiJson.load(HTTParty.get())
     end
   end
 
