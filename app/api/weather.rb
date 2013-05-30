@@ -36,9 +36,12 @@ module Weather
       end
 
       desc '彩虹天气微信接口'
-      get :weixin do
-        check_sign(params)
-        #get_city_weather_weixin(request.body.read).to_xml
+      post :weixin do
+        if (params[:signature]) 
+          check_sign(params)
+        else
+          get_city_weather_weixin(request.body.read).to_xml
+        end
       end
     end
   end

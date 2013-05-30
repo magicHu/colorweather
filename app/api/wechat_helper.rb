@@ -65,11 +65,11 @@ module WechatHelper
     # 将三个参数字符串拼接成一个字符串进行sha1加密
     expect_sign = Digest::SHA1.hexdigest([token, params['timestamp'], params['nonce']].sort.join)
 
+    response_str = 'error'
     if expect_sign == params['signature']
-      return params['echostr'] 
-    else
-      return 'error'
+      response_str = params['echostr'] 
     end
+    return response_str
   end
 
   def get_weather_info(city_name)

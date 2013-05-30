@@ -44,7 +44,8 @@ describe Weather::API do
     post "/weather/weixin", request_body
     response.status.should == 201
 
-    weather_info = Nokogiri::XML(response.body)
+    puts response.body
+    #weather_info = Nokogiri::XML(response.body)
   end
 
   it "test check weixin token" do
@@ -59,8 +60,8 @@ describe Weather::API do
 
     signature = Digest::SHA1.hexdigest([token, timestamp, nonce].sort.join)
 
-    get "/weather/weixin", { :timestamp => timestamp, :nonce => nonce, :echostr => echostr, :signature => signature }
-    response.status.should == 200
+    post "/weather/weixin", { :timestamp => timestamp, :nonce => nonce, :echostr => echostr, :signature => signature }
+    response.status.should == 201
     echostr.should == response.body
   end
 
