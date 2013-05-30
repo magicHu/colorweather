@@ -5,7 +5,7 @@ module Weather
   class API < Grape::API
     
     version 'v1', :using => :header, :vendor => 'colorweather'
-    format  :txt
+    format  :xml
 
     helpers WeatherHelper
     helpers WechatHelper
@@ -38,15 +38,15 @@ module Weather
 
       desc '彩虹天气微信接口'
       post :weixin do
+        request_body = request.body.read
+        Rails.logger.info request_body
         if (params[:echostr]) 
           check_sign(params)
         else 
-          request_body = request.body.read
-          Rails.logger.info request_body
-          response = get_city_weather_weixin(request_body).to_xml
-          Rails.logger.info response
-          response
+          response = get_city_weather_weixin(request_body)
         end
+        Rails.logger.info response
+        response
       end
     end
   end
