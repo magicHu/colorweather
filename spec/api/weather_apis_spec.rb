@@ -32,7 +32,7 @@ describe Weather::API do
   it "get city info from weixin" do
     request_body = <<-EOF 
       <xml>
-       <ToUserName><![CDATA[john]]></ToUserName>
+       <ToUserName><![CDATA[colorweather]]></ToUserName>
        <FromUserName><![CDATA[jobs]]></FromUserName> 
        <CreateTime>1348831860</CreateTime>
        <MsgType><![CDATA[text]]></MsgType>
@@ -41,7 +41,7 @@ describe Weather::API do
      </xml>
     EOF
 
-    post "/weather/weixin", request_body
+    post "/weather/weixin?signature=37f3f3dc7aa56b505538e8bb323f629949767229&timestamp=1369898060&nonce=1370416851", request_body
     response.status.should == 201
 
     puts response.body

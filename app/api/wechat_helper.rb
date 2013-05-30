@@ -40,9 +40,9 @@ module WechatHelper
       xml.xml {
         xml.ToUserName { xml.cdata request_params[:from_user_name] }
         xml.FromUserName { xml.cdata request_params[:to_user_name] }
-        xml.CreateTime { Time.now.to_i }
+        xml.CreateTime Time.now.to_i
         xml.MsgType { xml.cdata "news" }
-        xml.ArticleCount { xml.cdata weather_infos.length }
+        xml.ArticleCount weather_infos.length
 
         xml.Articles {
           weather_infos.each do |weather_info|
