@@ -6,6 +6,7 @@ module Weather
     
     version 'v1', :using => :header, :vendor => 'colorweather'
     format  :txt
+
     helpers WeatherHelper
     helpers WechatHelper
 
@@ -43,7 +44,9 @@ module Weather
 
       desc '彩虹天气微信接口'
       post :weixin do
-        get_city_weather_weixin(request.body.read).to_xml
+        response = get_city_weather_weixin(request.body.read).to_xml
+        Rails.logger.info response
+        response
       end
     end
   end
