@@ -47,4 +47,21 @@ describe Weather::API do
     weather_info = Nokogiri::XML(response.body)
   end
 
+  it "test check weixin token" do
+    # signature  微信加密签名
+    # timestamp  时间戳
+    # nonce  随机数
+    # echostr  随机字符串
+    timestamp = Time.new.to_i.to_s
+    nonce = "random"
+    echostr = "echostr"
+    token = "colorweather"
+
+    signature = Digest::SHA1.hexdigest([token, timestamp, nonce].sort.join)
+
+    get "/weather/weixin", { :timestamp => timestamp, :nonce => nonce, :echostr => echostr, :signature => signature }
+    response.status.should == 200
+    echostr.should == response.body
+  end
+
 end
