@@ -35,13 +35,15 @@ module Weather
         Setting.last.to_json
       end
 
+
+      desc '彩虹天气微信接口'
+      get :weixin do
+        check_sign(params)
+      end
+
       desc '彩虹天气微信接口'
       post :weixin do
-        if (params[:signature]) 
-          check_sign(params)
-        else
-          get_city_weather_weixin(request.body.read).to_xml
-        end
+        get_city_weather_weixin(request.body.read).to_xml
       end
     end
   end

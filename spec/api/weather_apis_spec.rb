@@ -60,8 +60,8 @@ describe Weather::API do
 
     signature = Digest::SHA1.hexdigest([token, timestamp, nonce].sort.join)
 
-    post "/weather/weixin", { :timestamp => timestamp, :nonce => nonce, :echostr => echostr, :signature => signature }
-    response.status.should == 201
+    get "/weather/weixin", { :timestamp => timestamp, :nonce => nonce, :echostr => echostr, :signature => signature }
+    response.status.should == 200
     echostr.should == response.body
   end
 
