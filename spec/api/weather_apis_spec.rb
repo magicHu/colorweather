@@ -44,6 +44,7 @@ describe Weather::API do
     post "/weather/weixin?signature=37f3f3dc7aa56b505538e8bb323f629949767229&timestamp=1369898060&nonce=1370416851", request_body
     response.status.should == 201
 
+    puts response.body
     node = Nokogiri::XML(response.body).xpath('//xml')
     "jobs".should == node.xpath('ToUserName').text
     "colorweather".should == node.xpath('FromUserName').text
@@ -62,7 +63,7 @@ describe Weather::API do
      </xml>
     EOF
 
-    post "/weather/weixin?signature=37f3f3dc7aa56b505538e8bb323f629949767229&timestamp=1369898060&nonce=1370416851", request_body
+    post "/weather/weixin?signature=37f3f3dc7aa56b505538e8bb323f629949767229&timestamp=1369898060&nonce=1370416851", :body => request_body
     response.status.should == 201
 
     node = Nokogiri::XML(response.body).xpath('//xml')
@@ -79,13 +80,13 @@ describe Weather::API do
     # echostr  随机字符串
     timestamp = Time.new.to_i.to_s
     nonce = "random"
-    echostr = "echostr"
+    echostr = "hello world"
     token = "colorweather"
 
     signature = Digest::SHA1.hexdigest([token, timestamp, nonce].sort.join)
 
-    get "/weather/weixin", { :timestamp => timestamp, :nonce => nonce, :echostr => echostr, :signature => signature }
-    response.status.should == 200
+    post "/weather/weixin", { :timestamp => timestamp, :nonce => nonce, :echostr => echostr, :signature => signature }
+    response.status.should == 201
     echostr.should == response.body
   end
 

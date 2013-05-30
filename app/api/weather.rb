@@ -36,19 +36,17 @@ module Weather
         Setting.last.to_json
       end
 
-
-      desc '彩虹天气微信接口'
-      get :weixin do
-        check_sign(params)
-      end
-
       desc '彩虹天气微信接口'
       post :weixin do
-        request_body = request.body.read
-        Rails.logger.info request_body
-        response = get_city_weather_weixin(request_body).to_xml
-        Rails.logger.info response
-        response
+        if (params[:echostr]) 
+          check_sign(params)
+        else 
+          request_body = request.body.read
+          Rails.logger.info request_body
+          response = get_city_weather_weixin(request_body).to_xml
+          Rails.logger.info response
+          response
+        end
       end
     end
   end
