@@ -3,16 +3,15 @@ module WechatHelper
   include WeatherHelper
 
   def get_city_weather_weixin(request_body)
+    request_params = parse_weixin_request_body(request_body)
     begin
-      request_params = parse_weixin_request_body(request_body)
-
       if 'text' == request_params[:msg_type]
         weather_info = get_weather_info(request_params[:city_name])
         return response_weixin_format(request_params, weather_info)
       end
     rescue Exception => e 
-      puts e
-      return default_response
+      Rails.logger.error e
+      return default_response(request_params[:to_user_name], request_params[:from_user_name])
     end
   end
 
@@ -74,7 +73,7 @@ module WechatHelper
 
   def get_weather_info(city_name)
     city_no = get_city_no_by_name(city_name)
-    return default_response unless city_no
+    raise ArgumentError, "no exist #{city_name}" unless city_no
 
     week_weather_info = get_week_weather_info(city_no)
     return parse_weather_info(week_weather_info)
@@ -122,10 +121,19 @@ module WechatHelper
     'colorweather'
   end
 
-  def default_response
-    Rails.cache.fetch([:weixin, :defaultresponse], expires_in: 1.day) do
-      "请输入城市名称，比如:北京,上海,纽约,伦敦"
+  @@DEFAULT_RESPONSE = "请输入城市名称，比如:北京,上海,纽约,伦敦"
+  def default_response(from_user, to_user)
+    builder = Nokogiri::XML::Builder.new(:encoding => 'UTF-8') do |xml|
+      xml.xml {
+        xml.ToUserName { xml.cdata to_user }
+        xml.FromUserName { xml.cdata from_user }
+        xml.CreateTime Time.now.to_i
+        xml.MsgType { xml.cdata "text" }
+        xml.Content @@DEFAULT_RESPONSE
+        xml.FuncFlag 0
+      }
     end
+    builder
   end
 
   @@IMAGE_IDS = ["32","34","26","37","45","45","5","9",

@@ -44,8 +44,32 @@ describe Weather::API do
     post "/weather/weixin?signature=37f3f3dc7aa56b505538e8bb323f629949767229&timestamp=1369898060&nonce=1370416851", request_body
     response.status.should == 201
 
-    puts response.body
-    #weather_info = Nokogiri::XML(response.body)
+    node = Nokogiri::XML(response.body).xpath('//xml')
+    "jobs".should == node.xpath('ToUserName').text
+    "colorweather".should == node.xpath('FromUserName').text
+    "news".should ==  node.xpath('MsgType').text
+  end
+
+  it "get no exist city weather info" do
+    request_body = <<-EOF 
+      <xml>
+       <ToUserName><![CDATA[colorweather]]></ToUserName>
+       <FromUserName><![CDATA[jobs]]></FromUserName> 
+       <CreateTime>1348831860</CreateTime>
+       <MsgType><![CDATA[text]]></MsgType>
+       <Content><![CDATA[天朝]]></Content>
+       <MsgId>1234567890123456</MsgId>
+     </xml>
+    EOF
+
+    post "/weather/weixin?signature=37f3f3dc7aa56b505538e8bb323f629949767229&timestamp=1369898060&nonce=1370416851", request_body
+    response.status.should == 201
+
+    node = Nokogiri::XML(response.body).xpath('//xml')
+    "jobs".should == node.xpath('ToUserName').text
+    "colorweather".should == node.xpath('FromUserName').text
+    "text".should ==  node.xpath('MsgType').text
+    "请输入城市名称，比如:北京,上海,纽约,伦敦".should ==  node.xpath('Content').text
   end
 
   it "test check weixin token" do

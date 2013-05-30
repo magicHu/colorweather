@@ -44,7 +44,9 @@ module Weather
 
       desc '彩虹天气微信接口'
       post :weixin do
-        response = get_city_weather_weixin(request.body.read).to_xml
+        request_body = request.body.read
+        Rails.logger.info request_body
+        response = get_city_weather_weixin(request_body).to_xml
         Rails.logger.info response
         response
       end
