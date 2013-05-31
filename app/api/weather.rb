@@ -37,6 +37,11 @@ module Weather
       end
 
       desc '彩虹天气微信接口'
+      get :weixin do
+        check_sign(params)
+      end
+
+      desc '彩虹天气微信接口'
       post :weixin do
         request_body = request.body.read
         Rails.logger.info request_body
