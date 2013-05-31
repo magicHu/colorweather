@@ -6,6 +6,7 @@ module Weather
     
     version 'v1', :using => :header, :vendor => 'colorweather'
     format  :xml
+    content_type :xml, "application/xml"  
 
     helpers WeatherHelper
     helpers WechatHelper
@@ -50,6 +51,7 @@ module Weather
         else 
           response = get_city_weather_weixin(request_body)
         end
+        status("200") 
         Rails.logger.info response
         response
       end
