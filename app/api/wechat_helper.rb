@@ -35,11 +35,13 @@ module WechatHelper
     weather_infos << { :weather => weather_info[:w2], :img => image_url(weather_info[:img2].to_i) }
     weather_infos << { :weather => weather_info[:w3], :img => image_url(weather_info[:img3].to_i) }
 
+    return default_response(request_params[:to_user_name], request_params[:from_user_name])
+=begin
     builder = Nokogiri::XML::Builder.new(:encoding => 'UTF-8') do |xml|
       xml.xml {
         xml.ToUserName { xml.cdata request_params[:from_user_name] }
         xml.FromUserName { xml.cdata request_params[:to_user_name] }
-        xml.CreateTime Time.now.to_i
+        xml.CreateTime (Time.now.to_i * 1000)
         xml.MsgType { xml.cdata "news" }
         xml.ArticleCount weather_infos.length
 
@@ -57,6 +59,7 @@ module WechatHelper
       }
     end
     builder
+=end
   end
 
   def check_sign(params) 
