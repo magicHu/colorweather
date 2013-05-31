@@ -30,24 +30,24 @@ module WechatHelper
 
   def response_weixin_format(request_params, weather_info)
     weather_infos = []
-    weather_infos << { :weather => weather_info[:city], :img => image_big_url(weather_info[:img1].to_i) }
+    weather_infos << { :weather => weather_info[:city], :img => image_url(weather_info[:img1].to_i) }
     weather_infos << { :weather => weather_info[:w1], :img => image_url(weather_info[:img1].to_i) }
     weather_infos << { :weather => weather_info[:w2], :img => image_url(weather_info[:img2].to_i) }
     weather_infos << { :weather => weather_info[:w3], :img => image_url(weather_info[:img3].to_i) }
 
-    return default_response(request_params[:to_user_name], request_params[:from_user_name])
-=begin
+    #return default_response(request_params[:to_user_name], request_params[:from_user_name])
+#=begin
     builder = Nokogiri::XML::Builder.new(:encoding => 'UTF-8') do |xml|
       xml.xml {
         xml.ToUserName { xml.cdata request_params[:from_user_name] }
         xml.FromUserName { xml.cdata request_params[:to_user_name] }
-        xml.CreateTime (Time.now.to_i * 1000)
+        xml.CreateTime Time.now.to_i
         xml.MsgType { xml.cdata "news" }
         xml.ArticleCount weather_infos.length
 
         xml.Articles {
           weather_infos.each do |weather_info|
-            xml.Item {
+            xml.item {
               xml.Title { xml.cdata weather_info[:weather] }
               xml.Discription { xml.cdata "" }
               xml.PicUrl { xml.cdata weather_info[:img] }
@@ -59,7 +59,7 @@ module WechatHelper
       }
     end
     builder
-=end
+#=end
   end
 
   def check_sign(params) 
