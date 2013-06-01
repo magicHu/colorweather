@@ -16,15 +16,15 @@ module WechatHelper
   end
 
   def parse_weixin_request_body(request_body)
-    node = Nokogiri::XML(request_body).xpath('//xml')
+    request_params = Hash.from_xml(request_body)['xml']
 
     {
-      :to_user_name => node.xpath('ToUserName').text,
-      :from_user_name => node.xpath('FromUserName').text,
-      :create_time => node.xpath('CreateTime').text,
-      :msg_type => node.xpath('MsgType').text,
-      :city_name => node.xpath('Content').text,
-      :msg_id => node.xpath('MsgId').text
+      :to_user_name => request_params['ToUserName'],
+      :from_user_name => request_params['FromUserName'],
+      :create_time => request_params['CreateTime'],
+      :msg_type => request_params['MsgType'],
+      :city_name => request_params['Content'],
+      :msg_id => request_params['MsgId']
     }
   end
 
@@ -90,9 +90,11 @@ module WechatHelper
 
     wind = parse_wind(week_weather_info["wind1"])
 
+    date = week_weather_info["date_y"]
+    week = parse_week(week_weather_info["week"])
+
     {
-      :city => week_weather_info["city"],
-      #"city" =>$data['city'].' '.$time.' '.$data['weather1'],
+      :city => "#{week_weather_info["city"]} #{date} #{week} #{week_weather_info["weather1"]}",
       :w1 => "今日 #{week_weather_info["weather1"]} , #{today_temp}, #{wind}",
       :w2 => "明天 #{week_weather_info["weather2"]} , #{tomorrow_temp}",
       :w3 => "后天 #{week_weather_info["weather3"]} , #{after_tomorrow_temp}",
