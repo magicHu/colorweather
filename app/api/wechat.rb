@@ -19,12 +19,11 @@ module Wechat
 
       desc '彩虹天气微信接口'
       post do
-        request_body = request.body.read
-        Rails.logger.info request_body
+        #request_body = request.body.read
+        #Rails.logger.info request_body
         status("200")
-
         response = get_city_weather_weixin(request_body)
-        Rails.logger.info response.to_xml
+        #Rails.logger.info response.to_xml
         response.to_xml
       end
     end

@@ -9,6 +9,7 @@ module WechatHelper
         weather_info = get_weather_info(request_params[:city_name])
         return response_weixin_format(request_params, weather_info)
       end
+      return default_response(request_params[:to_user_name], request_params[:from_user_name])
     rescue Exception => e 
       Rails.logger.error e
       return default_response(request_params[:to_user_name], request_params[:from_user_name])
