@@ -85,6 +85,7 @@ module WechatHelper
 
   def parse_weather_info(weather_info)
     week_weather_info = weather_info["weatherinfo"]
+    binding.pry
     today_temp = parse_temp(week_weather_info["temp1"])
     tomorrow_temp = parse_temp(week_weather_info["temp2"])
     after_tomorrow_temp = parse_temp(week_weather_info["temp3"])
@@ -107,8 +108,7 @@ module WechatHelper
 
   # "19℃~22℃" => "19/22"
   def parse_temp(temp)
-    parts = temp.partition("~")
-    "#{parts[2].gsub(/℃/, "")}/#{parts[0].gsub(/℃/, "")}℃"
+    temp.gsub(/℃/, '').gsub(/~/, '/') + '℃'
   end
 
   def parse_wind(wind)
@@ -127,7 +127,7 @@ module WechatHelper
     'colorweather'
   end
 
-  @@DEFAULT_RESPONSE = "请输入城市名称，比如:北京,上海,纽约,伦敦"
+  @@DEFAULT_RESPONSE = "你好，请确定你输入的城市名称是否正确；查询辽宁省大连市的天气，请直接输入城市名称：大连。"
   def default_response(from_user, to_user)
     builder = Nokogiri::XML::Builder.new(:encoding => 'UTF-8') do |xml|
       xml.xml {
