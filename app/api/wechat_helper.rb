@@ -84,6 +84,7 @@ module WechatHelper
   end
 
   def parse_weather_info(weather_info)
+    binding.pry
     week_weather_info = weather_info["weatherinfo"]
     today_temp = parse_temp(week_weather_info["temp1"])
     tomorrow_temp = parse_temp(week_weather_info["temp2"])
@@ -105,10 +106,10 @@ module WechatHelper
     }
   end
 
-  private
   # "19℃~22℃" => "19/22"
   def parse_temp(temp)
-    temp.gsub(/℃/, "").gsub(/~/, "/") + "℃"
+    parts = temp.partition("~")
+    "#{parts[2].gsub(/℃/, "")}/#{parts[0].gsub(/℃/, "")}℃"
   end
 
   def parse_wind(wind)
