@@ -32,7 +32,7 @@ module Weather
       
       desc '获取版本信息'
       get :version do
-        Setting.last
+        Setting.get_version_setting
       end
 
     end
