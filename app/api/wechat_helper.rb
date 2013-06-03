@@ -36,8 +36,6 @@ module WechatHelper
     weather_infos << { :weather => weather_info[:w2], :img => image_url(weather_info[:img2].to_i) }
     weather_infos << { :weather => weather_info[:w3], :img => image_url(weather_info[:img3].to_i) }
 
-    #return default_response(request_params[:to_user_name], request_params[:from_user_name])
-#=begin
     builder = Nokogiri::XML::Builder.new(:encoding => 'UTF-8') do |xml|
       xml.xml {
         xml.ToUserName { xml.cdata request_params[:from_user_name] }
@@ -60,7 +58,6 @@ module WechatHelper
       }
     end
     builder
-#=end
   end
 
   def check_sign(params) 
@@ -91,8 +88,9 @@ module WechatHelper
 
     wind = parse_wind(week_weather_info["wind1"])
 
-    date = week_weather_info["date_y"]
-    week = parse_week(week_weather_info["week"])
+    now = Time.now
+    date = parse_date(now)
+    week = parse_week(now)
 
     {
       :city => "#{week_weather_info["city"]} #{date} #{week} #{week_weather_info["weather1"]}",
@@ -115,18 +113,19 @@ module WechatHelper
   end
 
   def parse_date(date)
-    return date.gsub(/\d*年/, '')
+    return date.strftime("%Y年%m月%d日")
   end
 
-  def parse_week(week)
-    return week.gsub(/星期/, "周")
+  @@WEEK_DAY = ["周一", "周二", "周三", "周四", "周五", "周六", "周日"]
+  def parse_week(date)
+    @@WEEK_DAY[date.wday - 1]
   end
 
   def token
     'colorweather'
   end
 
-  @@DEFAULT_RESPONSE = "请直接输入城市名称，比如: 北京，上海，大连，西安，成都。"
+  @@DEFAULT_RESPONSE = "请直接输入城市名称，比如: 北京，上海，大连，西安，成都。如果内容包含省份信息，以及语音信息神马的我都不回答哟，大家别调戏我啦 谢谢 ^_^"
   def default_response(from_user, to_user)
     builder = Nokogiri::XML::Builder.new(:encoding => 'UTF-8') do |xml|
       xml.xml {

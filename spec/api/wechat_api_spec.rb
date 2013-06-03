@@ -48,7 +48,7 @@ describe Wechat::API do
     "jobs".should == node.xpath('ToUserName').text
     "colorweather".should == node.xpath('FromUserName').text
     "text".should ==  node.xpath('MsgType').text
-    "请直接输入城市名称，比如: 北京，上海，大连，西安，成都。".should ==  node.xpath('Content').text
+    "请直接输入城市名称，比如: 北京，上海，大连，西安，成都。如果内容包含省份信息，以及语音信息神马的我都不回答哟，大家别调戏我啦 谢谢 ^_^".should ==  node.xpath('Content').text
   end
 
   it "test check weixin token" do
