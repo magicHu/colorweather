@@ -21,7 +21,7 @@ module Weather
 
       desc '根据经纬度获取天气信息'
       get 'lat/:lat/lng/:lng', :requirements => {:lat => /\-*\d+.\d+/, :lng => /\-*\d+.\d+/} do
-        city_no = get_city_by_lat_lon(params[:lat], params[:lng])
+        city_no = get_city_no_by_lat_lon(params[:lat], params[:lng])
 
         unless city_no
           error!('Unexpect lat and lng', 400)

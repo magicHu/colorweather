@@ -15,6 +15,22 @@ describe Wechat::API do
     EOF
   }
 
+  let(:location_request_body) {
+    <<-EOF 
+      <xml>
+        <ToUserName><![CDATA[colorweather]]></ToUserName>
+        <FromUserName><![CDATA[jobs]]></FromUserName> 
+        <CreateTime>1348831860</CreateTime>
+        <MsgType><![CDATA[location]]></MsgType>
+        <Location_X>23.134521</Location_X>
+        <Location_Y>113.358803</Location_Y>
+        <Scale>20</Scale>
+        <Label><![CDATA[位置信息]]></Label>
+        <MsgId>1234567890123456</MsgId>
+     </xml>
+    EOF
+  }
+
   let(:noexist_city_request_body) {
     <<-EOF 
       <xml>
@@ -40,8 +56,22 @@ describe Wechat::API do
     
     today_weather_info = node.xpath('Articles/item')
     city_name = today_weather_info.xpath("Title").text
-    puts city_name
     city_name.start_with?("大连").should be_true
+  end
+
+  it "get city weather by location" do
+    post "/v1/weixin", location_request_body
+    response.status.should == 200
+
+    puts response.body
+    node = Nokogiri::XML(response.body).xpath('//xml')
+    "jobs".should == node.xpath('ToUserName').text
+    "colorweather".should == node.xpath('FromUserName').text
+    "news".should == node.xpath('MsgType').text
+    
+    today_weather_info = node.xpath('Articles/item')
+    city_name = today_weather_info.xpath("Title").text
+    city_name.start_with?("广州").should be_true
   end
 
   it "get no exist city weather info" do

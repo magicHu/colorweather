@@ -8,6 +8,10 @@ module WechatHelper
       if 'text' == request_params[:msg_type]
         weather_info = get_weather_info(request_params[:city_name])
         return response_weixin_format(request_params, weather_info)
+      elsif 'location' == request_params[:msg_type]
+        city_no = get_city_no_by_lat_lon(request_params[:lat], request_params[:lng])
+        weather_info = get_weather_info_by_city_no(city_no)
+        return response_weixin_format(request_params, weather_info)
       end
       return default_response(request_params[:to_user_name], request_params[:from_user_name])
     rescue Exception => e 
@@ -25,7 +29,9 @@ module WechatHelper
       :create_time => request_params['CreateTime'],
       :msg_type => request_params['MsgType'],
       :city_name => request_params['Content'],
-      :msg_id => request_params['MsgId']
+      :msg_id => request_params['MsgId'],
+      :lat => request_params['Location_X'],
+      :lng => request_params['Location_Y']
     }
   end
 
@@ -76,6 +82,10 @@ module WechatHelper
     city_no = get_city_no_by_name(city_name)
     raise ArgumentError, "no exist #{city_name}" unless city_no
 
+    return get_weather_info_by_city_no(city_no)
+  end
+
+  def get_weather_info_by_city_no(city_no)
     week_weather_info = get_week_weather_info(city_no)
     return parse_weather_info(week_weather_info)
   end

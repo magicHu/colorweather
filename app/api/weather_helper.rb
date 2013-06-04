@@ -41,7 +41,7 @@ module WeatherHelper
       end
 
     rescue Exception => e
-      Grape::API.logger.error e
+      Rails.logger.error e
       error!('Unexpect city info', 400)
     end
   end
@@ -58,7 +58,7 @@ module WeatherHelper
     end
   end
 
-  def get_city_by_lat_lon(lat, lng)
+  def get_city_no_by_lat_lon(lat, lng)
     begin
       Rails.cache.fetch([:lat, lat, :lng, lng], expires_in: 1.day) do
         url = "http://api.map.baidu.com/geocoder?output=json&key=37492c0ee6f924cb5e934fa08c6b1676&location=#{lat},#{lng}"
@@ -69,7 +69,7 @@ module WeatherHelper
         get_city_no_by_name(city_name)
       end
     rescue Exception => e
-      Grape::API.logger.error e
+      Rails.logger.error e
       nil
     end
   end
