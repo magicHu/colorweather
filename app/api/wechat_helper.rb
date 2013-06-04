@@ -125,7 +125,7 @@ module WechatHelper
     'colorweather'
   end
 
-  @@DEFAULT_RESPONSE = "请直接输入城市名称，比如: 北京，上海，大连，西安，成都。如果内容包含省份信息，以及语音信息神马的我都不认识哟。谢谢 ^_^"
+  @@DEFAULT_RESPONSE = "请直接输入城市名称，比如: 北京，上海，大连，西安，成都。语音神马的我不认识哟。谢谢 ^_^"
   def default_response(from_user, to_user)
     builder = Nokogiri::XML::Builder.new(:encoding => 'UTF-8') do |xml|
       xml.xml {

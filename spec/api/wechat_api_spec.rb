@@ -9,7 +9,7 @@ describe Wechat::API do
        <FromUserName><![CDATA[jobs]]></FromUserName> 
        <CreateTime>1348831860</CreateTime>
        <MsgType><![CDATA[text]]></MsgType>
-       <Content><![CDATA[上海]]></Content>
+       <Content><![CDATA[上海市]]></Content>
        <MsgId>1234567890123456</MsgId>
      </xml>
     EOF
@@ -36,8 +36,12 @@ describe Wechat::API do
     node = Nokogiri::XML(response.body).xpath('//xml')
     "jobs".should == node.xpath('ToUserName').text
     "colorweather".should == node.xpath('FromUserName').text
-    "news".should ==  node.xpath('MsgType').text
-    "4".should ==  node.xpath('ArticleCount').text
+    "news".should == node.xpath('MsgType').text
+    
+    today_weather_info = node.xpath('Articles/item')
+    city_name = today_weather_info.xpath("Title").text
+    puts city_name
+    city_name.start_with?("上海").should be_true
   end
 
   it "get no exist city weather info" do
@@ -48,7 +52,7 @@ describe Wechat::API do
     "jobs".should == node.xpath('ToUserName').text
     "colorweather".should == node.xpath('FromUserName').text
     "text".should ==  node.xpath('MsgType').text
-    "请直接输入城市名称，比如: 北京，上海，大连，西安，成都。如果内容包含省份信息，以及语音信息神马的我都不认识哟。谢谢 ^_^".should ==  node.xpath('Content').text
+    "请直接输入城市名称，比如: 北京，上海，大连，西安，成都。语音神马的我不认识哟。谢谢 ^_^".should ==  node.xpath('Content').text
   end
 
   it "test check weixin token" do

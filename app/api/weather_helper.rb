@@ -76,12 +76,17 @@ module WeatherHelper
 
   def get_city_no_by_name(city_name)
       if city_name
+        city_name = get_city_name(city_name)
         @@CITY_CODE.each_pair do |key, value|
-          if city_name.start_with? value
+          if city_name == value
             return key.dup
           end
         end
       end
       nil
+  end
+
+  def get_city_name(input_city_name)
+    input_city_name.gsub(/.*省/, '').gsub(/市.*/, '')
   end
 end
