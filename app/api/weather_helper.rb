@@ -78,7 +78,7 @@ module WeatherHelper
       if city_name
         city_name = get_city_name(city_name)
         @@CITY_CODE.each_pair do |key, value|
-          if city_name == value
+          if city_name.end_with? value
             return key.dup
           end
         end

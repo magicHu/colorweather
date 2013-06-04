@@ -9,7 +9,7 @@ describe Wechat::API do
        <FromUserName><![CDATA[jobs]]></FromUserName> 
        <CreateTime>1348831860</CreateTime>
        <MsgType><![CDATA[text]]></MsgType>
-       <Content><![CDATA[上海市]]></Content>
+       <Content><![CDATA[辽宁省大连市]]></Content>
        <MsgId>1234567890123456</MsgId>
      </xml>
     EOF
@@ -41,7 +41,7 @@ describe Wechat::API do
     today_weather_info = node.xpath('Articles/item')
     city_name = today_weather_info.xpath("Title").text
     puts city_name
-    city_name.start_with?("上海").should be_true
+    city_name.start_with?("大连").should be_true
   end
 
   it "get no exist city weather info" do
