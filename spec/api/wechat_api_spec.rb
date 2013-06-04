@@ -82,7 +82,7 @@ describe Wechat::API do
     "jobs".should == node.xpath('ToUserName').text
     "colorweather".should == node.xpath('FromUserName').text
     "text".should ==  node.xpath('MsgType').text
-    "请直接输入城市名称，比如: 北京，上海，大连，西安，成都。语音神马的我不认识哟。谢谢 ^_^".should ==  node.xpath('Content').text
+    "请直接输入城市名称，比如: 北京，上海，大连；也可以把你当前的位置发给我哦。语音神马的我还不认识哟。谢谢 ^_^".should ==  node.xpath('Content').text
   end
 
   it "test check weixin token" do
