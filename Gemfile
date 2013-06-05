@@ -25,6 +25,8 @@ gem 'rails_admin'
 
 gem 'simple_form'
 
+# error notifier
+gem 'airbrake'
 gem 'exception_notification'
 
 # performance monitoring
