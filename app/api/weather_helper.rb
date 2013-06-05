@@ -20,6 +20,8 @@ module WeatherHelper
         weather_info['current'].delete('Radar')
         weather_info['current'].delete('WSE')
 
+        parse_no_content(weather_info['current'])
+
         # index
         weather_info['current']['index_chuanyi'] = week_weather_info['weatherinfo']['index']
         weather_info['current']['index_uv'] = week_weather_info['weatherinfo']['index_uv']
@@ -44,6 +46,13 @@ module WeatherHelper
       Rails.logger.error e
       error!('Unexpect city info', 400)
     end
+  end
+
+  def parse_no_content(today_weather_info)
+    today_weather_info['temp'].gsub!(/暂无实况/, "--")
+    today_weather_info['WD'].gsub!(/暂无实况/, "--")
+    today_weather_info['WS'].gsub!(/暂无实况/, "--")
+    today_weather_info['SD'].gsub!(/暂无实况/, "--")
   end
 
   def get_week_weather_info(city_no)

@@ -17,6 +17,23 @@ describe Weather::API do
     6.should == weather_info["forecasts"].size
   end
 
+
+  it "get city weather info by city no" do
+    city_no = "101320101"
+    get "/v1/weather/city/#{city_no}"
+    response.status.should == 200
+    weather_info = MultiJson.load(response.body)
+
+    "香港".should == weather_info["current"]["city"]
+    city_no.should == weather_info["current"]["cityid"]
+    6.should == weather_info["forecasts"].size
+
+    "--".should == weather_info["current"]["temp"]
+    "--".should == weather_info["current"]["WD"]
+    "--".should == weather_info["current"]["WS"]
+    "--".should == weather_info["current"]["SD"]
+  end
+
   it "get city weather info by no exist city no" do
     get "/v1/weather/city/noexist"
     response.status.should == 400
