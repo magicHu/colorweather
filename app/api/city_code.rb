@@ -1,4 +1,4 @@
-# encoding: utf-8
+# -*- encoding : utf-8 -*-
 module CityCode
 @@CITY_CODE = {
     "101010100" => "北京",

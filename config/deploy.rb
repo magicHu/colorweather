@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 set :application, "ColorWeather"
 set :repository,  "https://github.com/magicHu/colorweather.git"
 set :branch, "release"

@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 Colorweather::Application.routes.draw do
 
   get "home/index"

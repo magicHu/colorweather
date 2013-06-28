@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 if Rails.env.development?
   api_files = Dir["#{Rails.root}/app/api/**/*.rb"]
   api_reloader = ActiveSupport::FileUpdateChecker.new(api_files) do
