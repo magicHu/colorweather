@@ -36,6 +36,10 @@ gem 'newrelic-grape'
 # memcached
 gem 'dalli'
 
+# redis
+gem 'redis-rails'
+gem 'redis-objects'
+
 
 gem 'jquery-rails'
 

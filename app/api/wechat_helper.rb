@@ -2,15 +2,24 @@
 module WechatHelper
   include WeatherHelper
 
+  @@MAX_MESSAGE_COUNT = 50
+  @@weixin_request_message = Redis::List.new('weixin_request_message', :maxlength => @@MAX_MESSAGE_COUNT)
+  @@weixin_response_message = Redis::List.new('weixin_response_message', :maxlength => @@MAX_MESSAGE_COUNT)
+
   def get_city_weather_weixin(request_body)
     request_params = parse_weixin_request_body(request_body)
     begin
       if 'text' == request_params[:msg_type]
-        weather_info = get_weather_info(request_params[:city_name])
+        city_name = request_params[:city_name]
+        weather_info = get_weather_info(city_name)
+
+        @@weixin_request_message.unshift Time.now.to_i #city_name
         return response_weixin_format(request_params, weather_info)
       elsif 'location' == request_params[:msg_type]
         city_no = get_city_no_by_lat_lon(request_params[:lat], request_params[:lng])
         weather_info = get_weather_info_by_city_no(city_no)
+
+        @@weixin_request_message.unshift Time.now.to_i #request_params[:label]
         return response_weixin_format(request_params, weather_info)
       end
       return default_response(request_params[:to_user_name], request_params[:from_user_name])
@@ -30,6 +39,7 @@ module WechatHelper
       :msg_type => request_params['MsgType'],
       :city_name => request_params['Content'],
       :msg_id => request_params['MsgId'],
+      :label => request_params['Label'],
       :lat => request_params['Location_X'],
       :lng => request_params['Location_Y']
     }
@@ -41,6 +51,8 @@ module WechatHelper
     weather_infos << { :weather => weather_info[:w1], :img => image_url(weather_info[:img1].to_i) }
     weather_infos << { :weather => weather_info[:w2], :img => image_url(weather_info[:img2].to_i) }
     weather_infos << { :weather => weather_info[:w3], :img => image_url(weather_info[:img3].to_i) }
+
+    @@weixin_response_message.unshift weather_info[:city]
 
     builder = Nokogiri::XML::Builder.new(:encoding => 'UTF-8') do |xml|
       xml.xml {
