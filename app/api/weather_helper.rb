@@ -17,7 +17,8 @@ module WeatherHelper
 
         # today
         weather_info['current'] = today_weather_info['weatherinfo']
-        weather_info['current']['date_y'] = week_weather_info['weatherinfo']['date_y']
+        #weather_info['current']['date_y'] = week_weather_info['weatherinfo']['date_y']
+        weather_info['current']['date_y'] = Time.now.strftime("%Y年%m月%d日")
         weather_info['current'].delete('isRadar')
         weather_info['current'].delete('Radar')
         weather_info['current'].delete('WSE')

@@ -16,9 +16,10 @@ describe Weather::API do
     "北京".should == weather_info["current"]["city"]
     city_no.should == weather_info["current"]["cityid"]
     6.should == weather_info["forecasts"].size
+    Time.now.strftime("%Y年%m月%d日").should == weather_info['current']['date_y']
   end
 
-
+=begin
   it "get city weather info by city no" do
     city_no = "101320101"
     get "/v1/weather/city/#{city_no}"
@@ -34,6 +35,7 @@ describe Weather::API do
     "--".should == weather_info["current"]["WS"]
     "--".should == weather_info["current"]["SD"]
   end
+=end
 
   it "get city weather info by no exist city no" do
     get "/v1/weather/city/noexist"
