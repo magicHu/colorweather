@@ -1,0 +1,511 @@
+# Logfile created on 2013-10-15 20:30:57 +0800 by logger.rb/36483
+[10/15/13 20:30:57 +0800 magic-macbook.local (10607)] INFO : Starting the New Relic agent in "test" environment.
+[10/15/13 20:30:57 +0800 magic-macbook.local (10607)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "test" section of your newrelic.yml.
+[10/15/13 20:30:57 +0800 magic-macbook.local (10607)] INFO : Reading configuration from 
+[10/15/13 20:30:57 +0800 magic-macbook.local (10607)] ERROR : Unable to read configuration file : no implicit conversion of nil into String
+[10/15/13 20:30:57 +0800 magic-macbook.local (10607)] INFO : Environment: test
+[10/15/13 20:30:57 +0800 magic-macbook.local (10607)] INFO : No known dispatcher detected.
+[10/15/13 20:30:57 +0800 magic-macbook.local (10607)] INFO : Application: test
+[10/15/13 20:30:57 +0800 magic-macbook.local (10607)] WARN : No license key found in newrelic.yml config. This often means your newrelic.yml is missing a section for the running environment 'test'
+[10/15/13 20:30:57 +0800 magic-macbook.local (10607)] INFO : Installing ActiveRecord instrumentation
+[10/15/13 20:30:57 +0800 magic-macbook.local (10607)] INFO : Installing Dalli Memcache instrumentation
+[10/15/13 20:30:57 +0800 magic-macbook.local (10607)] INFO : Installing Net instrumentation
+[10/15/13 20:30:57 +0800 magic-macbook.local (10607)] INFO : Installing Rails 3 Controller instrumentation
+[10/15/13 20:30:57 +0800 magic-macbook.local (10607)] INFO : Installing Rails 3.1/3.2 view instrumentation
+[10/15/13 20:30:57 +0800 magic-macbook.local (10607)] INFO : Installing Rails3 Error instrumentation
+[10/15/13 20:30:57 +0800 magic-macbook.local (10607)] INFO : Finished instrumentation
+[10/15/13 20:37:25 +0800 magic-macbook.local (14354)] INFO : Starting the New Relic agent in "test" environment.
+[10/15/13 20:37:25 +0800 magic-macbook.local (14354)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "test" section of your newrelic.yml.
+[10/15/13 20:37:25 +0800 magic-macbook.local (14354)] INFO : Reading configuration from 
+[10/15/13 20:37:25 +0800 magic-macbook.local (14354)] ERROR : Unable to read configuration file : no implicit conversion of nil into String
+[10/15/13 20:37:25 +0800 magic-macbook.local (14354)] INFO : Environment: test
+[10/15/13 20:37:25 +0800 magic-macbook.local (14354)] INFO : No known dispatcher detected.
+[10/15/13 20:37:25 +0800 magic-macbook.local (14354)] INFO : Application: test
+[10/15/13 20:37:25 +0800 magic-macbook.local (14354)] WARN : No license key found in newrelic.yml config. This often means your newrelic.yml is missing a section for the running environment 'test'
+[10/15/13 20:37:25 +0800 magic-macbook.local (14354)] INFO : Installing ActiveRecord instrumentation
+[10/15/13 20:37:25 +0800 magic-macbook.local (14354)] INFO : Installing Dalli Memcache instrumentation
+[10/15/13 20:37:25 +0800 magic-macbook.local (14354)] INFO : Installing Net instrumentation
+[10/15/13 20:37:25 +0800 magic-macbook.local (14354)] INFO : Installing Rails 3 Controller instrumentation
+[10/15/13 20:37:26 +0800 magic-macbook.local (14354)] INFO : Installing Rails 3.1/3.2 view instrumentation
+[10/15/13 20:37:26 +0800 magic-macbook.local (14354)] INFO : Installing Rails3 Error instrumentation
+[10/15/13 20:37:26 +0800 magic-macbook.local (14354)] INFO : Finished instrumentation
+[10/15/13 20:38:21 +0800 magic-macbook.local (14881)] INFO : Starting the New Relic agent in "test" environment.
+[10/15/13 20:38:21 +0800 magic-macbook.local (14881)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "test" section of your newrelic.yml.
+[10/15/13 20:38:21 +0800 magic-macbook.local (14881)] INFO : Reading configuration from 
+[10/15/13 20:38:21 +0800 magic-macbook.local (14881)] ERROR : Unable to read configuration file : no implicit conversion of nil into String
+[10/15/13 20:38:21 +0800 magic-macbook.local (14881)] INFO : Environment: test
+[10/15/13 20:38:21 +0800 magic-macbook.local (14881)] INFO : No known dispatcher detected.
+[10/15/13 20:38:21 +0800 magic-macbook.local (14881)] INFO : Application: test
+[10/15/13 20:38:21 +0800 magic-macbook.local (14881)] WARN : No license key found in newrelic.yml config. This often means your newrelic.yml is missing a section for the running environment 'test'
+[10/15/13 20:38:21 +0800 magic-macbook.local (14881)] INFO : Installing ActiveRecord instrumentation
+[10/15/13 20:38:21 +0800 magic-macbook.local (14881)] INFO : Installing Dalli Memcache instrumentation
+[10/15/13 20:38:21 +0800 magic-macbook.local (14881)] INFO : Installing Net instrumentation
+[10/15/13 20:38:21 +0800 magic-macbook.local (14881)] INFO : Installing Rails 3 Controller instrumentation
+[10/15/13 20:38:21 +0800 magic-macbook.local (14881)] INFO : Installing Rails 3.1/3.2 view instrumentation
+[10/15/13 20:38:21 +0800 magic-macbook.local (14881)] INFO : Installing Rails3 Error instrumentation
+[10/15/13 20:38:21 +0800 magic-macbook.local (14881)] INFO : Finished instrumentation
+[10/15/13 20:46:07 +0800 magic-macbook.local (19179)] INFO : Starting the New Relic agent in "test" environment.
+[10/15/13 20:46:07 +0800 magic-macbook.local (19179)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "test" section of your newrelic.yml.
+[10/15/13 20:46:07 +0800 magic-macbook.local (19179)] INFO : Reading configuration from 
+[10/15/13 20:46:07 +0800 magic-macbook.local (19179)] ERROR : Unable to read configuration file : no implicit conversion of nil into String
+[10/15/13 20:46:07 +0800 magic-macbook.local (19179)] INFO : Environment: test
+[10/15/13 20:46:07 +0800 magic-macbook.local (19179)] INFO : No known dispatcher detected.
+[10/15/13 20:46:07 +0800 magic-macbook.local (19179)] INFO : Application: test
+[10/15/13 20:46:07 +0800 magic-macbook.local (19179)] WARN : No license key found in newrelic.yml config. This often means your newrelic.yml is missing a section for the running environment 'test'
+[10/15/13 20:46:07 +0800 magic-macbook.local (19179)] INFO : Installing ActiveRecord instrumentation
+[10/15/13 20:46:07 +0800 magic-macbook.local (19179)] INFO : Installing Dalli Memcache instrumentation
+[10/15/13 20:46:07 +0800 magic-macbook.local (19179)] INFO : Installing Net instrumentation
+[10/15/13 20:46:07 +0800 magic-macbook.local (19179)] INFO : Installing Rails 3 Controller instrumentation
+[10/15/13 20:46:07 +0800 magic-macbook.local (19179)] INFO : Installing Rails 3.1/3.2 view instrumentation
+[10/15/13 20:46:07 +0800 magic-macbook.local (19179)] INFO : Installing Rails3 Error instrumentation
+[10/15/13 20:46:07 +0800 magic-macbook.local (19179)] INFO : Finished instrumentation
+[10/15/13 21:17:28 +0800 magic-macbook.local (36478)] INFO : Starting the New Relic agent in "test" environment.
+[10/15/13 21:17:28 +0800 magic-macbook.local (36478)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "test" section of your newrelic.yml.
+[10/15/13 21:17:28 +0800 magic-macbook.local (36478)] INFO : Reading configuration from 
+[10/15/13 21:17:28 +0800 magic-macbook.local (36478)] ERROR : Unable to read configuration file : no implicit conversion of nil into String
+[10/15/13 21:17:28 +0800 magic-macbook.local (36478)] INFO : Environment: test
+[10/15/13 21:17:28 +0800 magic-macbook.local (36478)] INFO : No known dispatcher detected.
+[10/15/13 21:17:28 +0800 magic-macbook.local (36478)] INFO : Application: test
+[10/15/13 21:17:28 +0800 magic-macbook.local (36478)] WARN : No license key found in newrelic.yml config. This often means your newrelic.yml is missing a section for the running environment 'test'
+[10/15/13 21:17:28 +0800 magic-macbook.local (36478)] INFO : Installing ActiveRecord instrumentation
+[10/15/13 21:17:28 +0800 magic-macbook.local (36478)] INFO : Installing Dalli Memcache instrumentation
+[10/15/13 21:17:28 +0800 magic-macbook.local (36478)] INFO : Installing Net instrumentation
+[10/15/13 21:17:28 +0800 magic-macbook.local (36478)] INFO : Installing Rails 3 Controller instrumentation
+[10/15/13 21:17:29 +0800 magic-macbook.local (36478)] INFO : Installing Rails 3.1/3.2 view instrumentation
+[10/15/13 21:17:29 +0800 magic-macbook.local (36478)] INFO : Installing Rails3 Error instrumentation
+[10/15/13 21:17:29 +0800 magic-macbook.local (36478)] INFO : Finished instrumentation
+[10/15/13 21:23:44 +0800 magic-macbook.local (40109)] INFO : Starting the New Relic agent in "test" environment.
+[10/15/13 21:23:44 +0800 magic-macbook.local (40109)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "test" section of your newrelic.yml.
+[10/15/13 21:23:44 +0800 magic-macbook.local (40109)] INFO : Reading configuration from 
+[10/15/13 21:23:44 +0800 magic-macbook.local (40109)] ERROR : Unable to read configuration file : no implicit conversion of nil into String
+[10/15/13 21:23:44 +0800 magic-macbook.local (40109)] INFO : Environment: test
+[10/15/13 21:23:44 +0800 magic-macbook.local (40109)] INFO : No known dispatcher detected.
+[10/15/13 21:23:44 +0800 magic-macbook.local (40109)] INFO : Application: test
+[10/15/13 21:23:44 +0800 magic-macbook.local (40109)] WARN : No license key found in newrelic.yml config. This often means your newrelic.yml is missing a section for the running environment 'test'
+[10/15/13 21:23:44 +0800 magic-macbook.local (40109)] INFO : Installing ActiveRecord instrumentation
+[10/15/13 21:23:44 +0800 magic-macbook.local (40109)] INFO : Installing Dalli Memcache instrumentation
+[10/15/13 21:23:44 +0800 magic-macbook.local (40109)] INFO : Installing Net instrumentation
+[10/15/13 21:23:44 +0800 magic-macbook.local (40109)] INFO : Installing Rails 3 Controller instrumentation
+[10/15/13 21:23:44 +0800 magic-macbook.local (40109)] INFO : Installing Rails 3.1/3.2 view instrumentation
+[10/15/13 21:23:44 +0800 magic-macbook.local (40109)] INFO : Installing Rails3 Error instrumentation
+[10/15/13 21:23:44 +0800 magic-macbook.local (40109)] INFO : Finished instrumentation
+[10/15/13 21:24:09 +0800 magic-macbook.local (40325)] INFO : Starting the New Relic agent in "test" environment.
+[10/15/13 21:24:09 +0800 magic-macbook.local (40325)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "test" section of your newrelic.yml.
+[10/15/13 21:24:09 +0800 magic-macbook.local (40325)] INFO : Reading configuration from 
+[10/15/13 21:24:09 +0800 magic-macbook.local (40325)] ERROR : Unable to read configuration file : no implicit conversion of nil into String
+[10/15/13 21:24:09 +0800 magic-macbook.local (40325)] INFO : Environment: test
+[10/15/13 21:24:09 +0800 magic-macbook.local (40325)] INFO : No known dispatcher detected.
+[10/15/13 21:24:09 +0800 magic-macbook.local (40325)] INFO : Application: test
+[10/15/13 21:24:09 +0800 magic-macbook.local (40325)] WARN : No license key found in newrelic.yml config. This often means your newrelic.yml is missing a section for the running environment 'test'
+[10/15/13 21:24:09 +0800 magic-macbook.local (40325)] INFO : Installing ActiveRecord instrumentation
+[10/15/13 21:24:09 +0800 magic-macbook.local (40325)] INFO : Installing Dalli Memcache instrumentation
+[10/15/13 21:24:09 +0800 magic-macbook.local (40325)] INFO : Installing Net instrumentation
+[10/15/13 21:24:09 +0800 magic-macbook.local (40325)] INFO : Installing Rails 3 Controller instrumentation
+[10/15/13 21:24:09 +0800 magic-macbook.local (40325)] INFO : Installing Rails 3.1/3.2 view instrumentation
+[10/15/13 21:24:09 +0800 magic-macbook.local (40325)] INFO : Installing Rails3 Error instrumentation
+[10/15/13 21:24:09 +0800 magic-macbook.local (40325)] INFO : Finished instrumentation
+[10/15/13 21:25:06 +0800 magic-macbook.local (40840)] INFO : Starting the New Relic agent in "test" environment.
+[10/15/13 21:25:06 +0800 magic-macbook.local (40840)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "test" section of your newrelic.yml.
+[10/15/13 21:25:06 +0800 magic-macbook.local (40840)] INFO : Reading configuration from 
+[10/15/13 21:25:06 +0800 magic-macbook.local (40840)] ERROR : Unable to read configuration file : no implicit conversion of nil into String
+[10/15/13 21:25:06 +0800 magic-macbook.local (40840)] INFO : Environment: test
+[10/15/13 21:25:06 +0800 magic-macbook.local (40840)] INFO : No known dispatcher detected.
+[10/15/13 21:25:06 +0800 magic-macbook.local (40840)] INFO : Application: test
+[10/15/13 21:25:06 +0800 magic-macbook.local (40840)] WARN : No license key found in newrelic.yml config. This often means your newrelic.yml is missing a section for the running environment 'test'
+[10/15/13 21:25:06 +0800 magic-macbook.local (40840)] INFO : Installing ActiveRecord instrumentation
+[10/15/13 21:25:06 +0800 magic-macbook.local (40840)] INFO : Installing Dalli Memcache instrumentation
+[10/15/13 21:25:06 +0800 magic-macbook.local (40840)] INFO : Installing Net instrumentation
+[10/15/13 21:25:06 +0800 magic-macbook.local (40840)] INFO : Installing Rails 3 Controller instrumentation
+[10/15/13 21:25:06 +0800 magic-macbook.local (40840)] INFO : Installing Rails 3.1/3.2 view instrumentation
+[10/15/13 21:25:06 +0800 magic-macbook.local (40840)] INFO : Installing Rails3 Error instrumentation
+[10/15/13 21:25:06 +0800 magic-macbook.local (40840)] INFO : Finished instrumentation
+[10/15/13 21:25:34 +0800 magic-macbook.local (41156)] INFO : Starting the New Relic agent in "test" environment.
+[10/15/13 21:25:34 +0800 magic-macbook.local (41156)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "test" section of your newrelic.yml.
+[10/15/13 21:25:34 +0800 magic-macbook.local (41156)] INFO : Reading configuration from 
+[10/15/13 21:25:34 +0800 magic-macbook.local (41156)] ERROR : Unable to read configuration file : no implicit conversion of nil into String
+[10/15/13 21:25:34 +0800 magic-macbook.local (41156)] INFO : Environment: test
+[10/15/13 21:25:34 +0800 magic-macbook.local (41156)] INFO : No known dispatcher detected.
+[10/15/13 21:25:34 +0800 magic-macbook.local (41156)] INFO : Application: test
+[10/15/13 21:25:34 +0800 magic-macbook.local (41156)] WARN : No license key found in newrelic.yml config. This often means your newrelic.yml is missing a section for the running environment 'test'
+[10/15/13 21:25:34 +0800 magic-macbook.local (41156)] INFO : Installing ActiveRecord instrumentation
+[10/15/13 21:25:34 +0800 magic-macbook.local (41156)] INFO : Installing Dalli Memcache instrumentation
+[10/15/13 21:25:34 +0800 magic-macbook.local (41156)] INFO : Installing Net instrumentation
+[10/15/13 21:25:34 +0800 magic-macbook.local (41156)] INFO : Installing Rails 3 Controller instrumentation
+[10/15/13 21:25:34 +0800 magic-macbook.local (41156)] INFO : Installing Rails 3.1/3.2 view instrumentation
+[10/15/13 21:25:34 +0800 magic-macbook.local (41156)] INFO : Installing Rails3 Error instrumentation
+[10/15/13 21:25:34 +0800 magic-macbook.local (41156)] INFO : Finished instrumentation
+[10/15/13 21:26:37 +0800 magic-macbook.local (41814)] INFO : Starting the New Relic agent in "test" environment.
+[10/15/13 21:26:37 +0800 magic-macbook.local (41814)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "test" section of your newrelic.yml.
+[10/15/13 21:26:37 +0800 magic-macbook.local (41814)] INFO : Reading configuration from 
+[10/15/13 21:26:37 +0800 magic-macbook.local (41814)] ERROR : Unable to read configuration file : no implicit conversion of nil into String
+[10/15/13 21:26:37 +0800 magic-macbook.local (41814)] INFO : Environment: test
+[10/15/13 21:26:37 +0800 magic-macbook.local (41814)] INFO : No known dispatcher detected.
+[10/15/13 21:26:37 +0800 magic-macbook.local (41814)] INFO : Application: test
+[10/15/13 21:26:37 +0800 magic-macbook.local (41814)] WARN : No license key found in newrelic.yml config. This often means your newrelic.yml is missing a section for the running environment 'test'
+[10/15/13 21:26:37 +0800 magic-macbook.local (41814)] INFO : Installing ActiveRecord instrumentation
+[10/15/13 21:26:37 +0800 magic-macbook.local (41814)] INFO : Installing Dalli Memcache instrumentation
+[10/15/13 21:26:37 +0800 magic-macbook.local (41814)] INFO : Installing Net instrumentation
+[10/15/13 21:26:37 +0800 magic-macbook.local (41814)] INFO : Installing Rails 3 Controller instrumentation
+[10/15/13 21:26:37 +0800 magic-macbook.local (41814)] INFO : Installing Rails 3.1/3.2 view instrumentation
+[10/15/13 21:26:37 +0800 magic-macbook.local (41814)] INFO : Installing Rails3 Error instrumentation
+[10/15/13 21:26:37 +0800 magic-macbook.local (41814)] INFO : Finished instrumentation
+[10/15/13 21:28:02 +0800 magic-macbook.local (42540)] INFO : Starting the New Relic agent in "test" environment.
+[10/15/13 21:28:02 +0800 magic-macbook.local (42540)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "test" section of your newrelic.yml.
+[10/15/13 21:28:02 +0800 magic-macbook.local (42540)] INFO : Reading configuration from 
+[10/15/13 21:28:02 +0800 magic-macbook.local (42540)] ERROR : Unable to read configuration file : no implicit conversion of nil into String
+[10/15/13 21:28:02 +0800 magic-macbook.local (42540)] INFO : Environment: test
+[10/15/13 21:28:02 +0800 magic-macbook.local (42540)] INFO : No known dispatcher detected.
+[10/15/13 21:28:02 +0800 magic-macbook.local (42540)] INFO : Application: test
+[10/15/13 21:28:02 +0800 magic-macbook.local (42540)] WARN : No license key found in newrelic.yml config. This often means your newrelic.yml is missing a section for the running environment 'test'
+[10/15/13 21:28:02 +0800 magic-macbook.local (42540)] INFO : Installing ActiveRecord instrumentation
+[10/15/13 21:28:02 +0800 magic-macbook.local (42540)] INFO : Installing Dalli Memcache instrumentation
+[10/15/13 21:28:02 +0800 magic-macbook.local (42540)] INFO : Installing Net instrumentation
+[10/15/13 21:28:02 +0800 magic-macbook.local (42540)] INFO : Installing Rails 3 Controller instrumentation
+[10/15/13 21:28:03 +0800 magic-macbook.local (42540)] INFO : Installing Rails 3.1/3.2 view instrumentation
+[10/15/13 21:28:03 +0800 magic-macbook.local (42540)] INFO : Installing Rails3 Error instrumentation
+[10/15/13 21:28:03 +0800 magic-macbook.local (42540)] INFO : Finished instrumentation
+[10/15/13 21:52:40 +0800 magic-macbook.local (56086)] INFO : Starting the New Relic agent in "test" environment.
+[10/15/13 21:52:40 +0800 magic-macbook.local (56086)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "test" section of your newrelic.yml.
+[10/15/13 21:52:40 +0800 magic-macbook.local (56086)] INFO : Reading configuration from 
+[10/15/13 21:52:40 +0800 magic-macbook.local (56086)] ERROR : Unable to read configuration file : no implicit conversion of nil into String
+[10/15/13 21:52:40 +0800 magic-macbook.local (56086)] INFO : Environment: test
+[10/15/13 21:52:40 +0800 magic-macbook.local (56086)] INFO : No known dispatcher detected.
+[10/15/13 21:52:40 +0800 magic-macbook.local (56086)] INFO : Application: test
+[10/15/13 21:52:40 +0800 magic-macbook.local (56086)] WARN : No license key found in newrelic.yml config. This often means your newrelic.yml is missing a section for the running environment 'test'
+[10/15/13 21:52:40 +0800 magic-macbook.local (56086)] INFO : Installing ActiveRecord instrumentation
+[10/15/13 21:52:40 +0800 magic-macbook.local (56086)] INFO : Installing Dalli Memcache instrumentation
+[10/15/13 21:52:40 +0800 magic-macbook.local (56086)] INFO : Installing Net instrumentation
+[10/15/13 21:52:40 +0800 magic-macbook.local (56086)] INFO : Installing Rails 3 Controller instrumentation
+[10/15/13 21:52:40 +0800 magic-macbook.local (56086)] INFO : Installing Rails 3.1/3.2 view instrumentation
+[10/15/13 21:52:40 +0800 magic-macbook.local (56086)] INFO : Installing Rails3 Error instrumentation
+[10/15/13 21:52:40 +0800 magic-macbook.local (56086)] INFO : Finished instrumentation
+[10/15/13 21:54:14 +0800 magic-macbook.local (56988)] INFO : Starting the New Relic agent in "test" environment.
+[10/15/13 21:54:14 +0800 magic-macbook.local (56988)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "test" section of your newrelic.yml.
+[10/15/13 21:54:14 +0800 magic-macbook.local (56988)] INFO : Reading configuration from 
+[10/15/13 21:54:14 +0800 magic-macbook.local (56988)] ERROR : Unable to read configuration file : no implicit conversion of nil into String
+[10/15/13 21:54:14 +0800 magic-macbook.local (56988)] INFO : Environment: test
+[10/15/13 21:54:14 +0800 magic-macbook.local (56988)] INFO : No known dispatcher detected.
+[10/15/13 21:54:14 +0800 magic-macbook.local (56988)] INFO : Application: test
+[10/15/13 21:54:14 +0800 magic-macbook.local (56988)] WARN : No license key found in newrelic.yml config. This often means your newrelic.yml is missing a section for the running environment 'test'
+[10/15/13 21:54:14 +0800 magic-macbook.local (56988)] INFO : Installing ActiveRecord instrumentation
+[10/15/13 21:54:14 +0800 magic-macbook.local (56988)] INFO : Installing Dalli Memcache instrumentation
+[10/15/13 21:54:14 +0800 magic-macbook.local (56988)] INFO : Installing Net instrumentation
+[10/15/13 21:54:14 +0800 magic-macbook.local (56988)] INFO : Installing Rails 3 Controller instrumentation
+[10/15/13 21:54:14 +0800 magic-macbook.local (56988)] INFO : Installing Rails 3.1/3.2 view instrumentation
+[10/15/13 21:54:14 +0800 magic-macbook.local (56988)] INFO : Installing Rails3 Error instrumentation
+[10/15/13 21:54:14 +0800 magic-macbook.local (56988)] INFO : Finished instrumentation
+[10/15/13 21:56:22 +0800 magic-macbook.local (58192)] INFO : Starting the New Relic agent in "test" environment.
+[10/15/13 21:56:22 +0800 magic-macbook.local (58192)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "test" section of your newrelic.yml.
+[10/15/13 21:56:22 +0800 magic-macbook.local (58192)] INFO : Reading configuration from 
+[10/15/13 21:56:22 +0800 magic-macbook.local (58192)] ERROR : Unable to read configuration file : no implicit conversion of nil into String
+[10/15/13 21:56:22 +0800 magic-macbook.local (58192)] INFO : Environment: test
+[10/15/13 21:56:22 +0800 magic-macbook.local (58192)] INFO : No known dispatcher detected.
+[10/15/13 21:56:22 +0800 magic-macbook.local (58192)] INFO : Application: test
+[10/15/13 21:56:22 +0800 magic-macbook.local (58192)] WARN : No license key found in newrelic.yml config. This often means your newrelic.yml is missing a section for the running environment 'test'
+[10/15/13 21:56:22 +0800 magic-macbook.local (58192)] INFO : Installing ActiveRecord instrumentation
+[10/15/13 21:56:22 +0800 magic-macbook.local (58192)] INFO : Installing Dalli Memcache instrumentation
+[10/15/13 21:56:22 +0800 magic-macbook.local (58192)] INFO : Installing Net instrumentation
+[10/15/13 21:56:22 +0800 magic-macbook.local (58192)] INFO : Installing Rails 3 Controller instrumentation
+[10/15/13 21:56:22 +0800 magic-macbook.local (58192)] INFO : Installing Rails 3.1/3.2 view instrumentation
+[10/15/13 21:56:22 +0800 magic-macbook.local (58192)] INFO : Installing Rails3 Error instrumentation
+[10/15/13 21:56:22 +0800 magic-macbook.local (58192)] INFO : Finished instrumentation
+[10/15/13 21:57:30 +0800 magic-macbook.local (58802)] INFO : Starting the New Relic agent in "test" environment.
+[10/15/13 21:57:30 +0800 magic-macbook.local (58802)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "test" section of your newrelic.yml.
+[10/15/13 21:57:30 +0800 magic-macbook.local (58802)] INFO : Reading configuration from 
+[10/15/13 21:57:30 +0800 magic-macbook.local (58802)] ERROR : Unable to read configuration file : no implicit conversion of nil into String
+[10/15/13 21:57:30 +0800 magic-macbook.local (58802)] INFO : Environment: test
+[10/15/13 21:57:30 +0800 magic-macbook.local (58802)] INFO : No known dispatcher detected.
+[10/15/13 21:57:30 +0800 magic-macbook.local (58802)] INFO : Application: test
+[10/15/13 21:57:30 +0800 magic-macbook.local (58802)] WARN : No license key found in newrelic.yml config. This often means your newrelic.yml is missing a section for the running environment 'test'
+[10/15/13 21:57:30 +0800 magic-macbook.local (58802)] INFO : Installing ActiveRecord instrumentation
+[10/15/13 21:57:30 +0800 magic-macbook.local (58802)] INFO : Installing Dalli Memcache instrumentation
+[10/15/13 21:57:30 +0800 magic-macbook.local (58802)] INFO : Installing Net instrumentation
+[10/15/13 21:57:30 +0800 magic-macbook.local (58802)] INFO : Installing Rails 3 Controller instrumentation
+[10/15/13 21:57:30 +0800 magic-macbook.local (58802)] INFO : Installing Rails 3.1/3.2 view instrumentation
+[10/15/13 21:57:30 +0800 magic-macbook.local (58802)] INFO : Installing Rails3 Error instrumentation
+[10/15/13 21:57:30 +0800 magic-macbook.local (58802)] INFO : Finished instrumentation
+[10/15/13 21:58:17 +0800 magic-macbook.local (59213)] INFO : Starting the New Relic agent in "test" environment.
+[10/15/13 21:58:17 +0800 magic-macbook.local (59213)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "test" section of your newrelic.yml.
+[10/15/13 21:58:17 +0800 magic-macbook.local (59213)] INFO : Reading configuration from 
+[10/15/13 21:58:17 +0800 magic-macbook.local (59213)] ERROR : Unable to read configuration file : no implicit conversion of nil into String
+[10/15/13 21:58:17 +0800 magic-macbook.local (59213)] INFO : Environment: test
+[10/15/13 21:58:17 +0800 magic-macbook.local (59213)] INFO : No known dispatcher detected.
+[10/15/13 21:58:17 +0800 magic-macbook.local (59213)] INFO : Application: test
+[10/15/13 21:58:17 +0800 magic-macbook.local (59213)] WARN : No license key found in newrelic.yml config. This often means your newrelic.yml is missing a section for the running environment 'test'
+[10/15/13 21:58:17 +0800 magic-macbook.local (59213)] INFO : Installing ActiveRecord instrumentation
+[10/15/13 21:58:17 +0800 magic-macbook.local (59213)] INFO : Installing Dalli Memcache instrumentation
+[10/15/13 21:58:17 +0800 magic-macbook.local (59213)] INFO : Installing Net instrumentation
+[10/15/13 21:58:17 +0800 magic-macbook.local (59213)] INFO : Installing Rails 3 Controller instrumentation
+[10/15/13 21:58:17 +0800 magic-macbook.local (59213)] INFO : Installing Rails 3.1/3.2 view instrumentation
+[10/15/13 21:58:17 +0800 magic-macbook.local (59213)] INFO : Installing Rails3 Error instrumentation
+[10/15/13 21:58:17 +0800 magic-macbook.local (59213)] INFO : Finished instrumentation
+[10/15/13 21:59:09 +0800 magic-macbook.local (59722)] INFO : Starting the New Relic agent in "test" environment.
+[10/15/13 21:59:09 +0800 magic-macbook.local (59722)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "test" section of your newrelic.yml.
+[10/15/13 21:59:09 +0800 magic-macbook.local (59722)] INFO : Reading configuration from 
+[10/15/13 21:59:09 +0800 magic-macbook.local (59722)] ERROR : Unable to read configuration file : no implicit conversion of nil into String
+[10/15/13 21:59:09 +0800 magic-macbook.local (59722)] INFO : Environment: test
+[10/15/13 21:59:09 +0800 magic-macbook.local (59722)] INFO : No known dispatcher detected.
+[10/15/13 21:59:09 +0800 magic-macbook.local (59722)] INFO : Application: test
+[10/15/13 21:59:09 +0800 magic-macbook.local (59722)] WARN : No license key found in newrelic.yml config. This often means your newrelic.yml is missing a section for the running environment 'test'
+[10/15/13 21:59:09 +0800 magic-macbook.local (59722)] INFO : Installing ActiveRecord instrumentation
+[10/15/13 21:59:09 +0800 magic-macbook.local (59722)] INFO : Installing Dalli Memcache instrumentation
+[10/15/13 21:59:09 +0800 magic-macbook.local (59722)] INFO : Installing Net instrumentation
+[10/15/13 21:59:09 +0800 magic-macbook.local (59722)] INFO : Installing Rails 3 Controller instrumentation
+[10/15/13 21:59:09 +0800 magic-macbook.local (59722)] INFO : Installing Rails 3.1/3.2 view instrumentation
+[10/15/13 21:59:09 +0800 magic-macbook.local (59722)] INFO : Installing Rails3 Error instrumentation
+[10/15/13 21:59:09 +0800 magic-macbook.local (59722)] INFO : Finished instrumentation
+[10/15/13 22:00:05 +0800 magic-macbook.local (60231)] INFO : Starting the New Relic agent in "test" environment.
+[10/15/13 22:00:05 +0800 magic-macbook.local (60231)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "test" section of your newrelic.yml.
+[10/15/13 22:00:05 +0800 magic-macbook.local (60231)] INFO : Reading configuration from 
+[10/15/13 22:00:05 +0800 magic-macbook.local (60231)] ERROR : Unable to read configuration file : no implicit conversion of nil into String
+[10/15/13 22:00:05 +0800 magic-macbook.local (60231)] INFO : Environment: test
+[10/15/13 22:00:05 +0800 magic-macbook.local (60231)] INFO : No known dispatcher detected.
+[10/15/13 22:00:05 +0800 magic-macbook.local (60231)] INFO : Application: test
+[10/15/13 22:00:05 +0800 magic-macbook.local (60231)] WARN : No license key found in newrelic.yml config. This often means your newrelic.yml is missing a section for the running environment 'test'
+[10/15/13 22:00:05 +0800 magic-macbook.local (60231)] INFO : Installing ActiveRecord instrumentation
+[10/15/13 22:00:05 +0800 magic-macbook.local (60231)] INFO : Installing Dalli Memcache instrumentation
+[10/15/13 22:00:05 +0800 magic-macbook.local (60231)] INFO : Installing Net instrumentation
+[10/15/13 22:00:05 +0800 magic-macbook.local (60231)] INFO : Installing Rails 3 Controller instrumentation
+[10/15/13 22:00:05 +0800 magic-macbook.local (60231)] INFO : Installing Rails 3.1/3.2 view instrumentation
+[10/15/13 22:00:05 +0800 magic-macbook.local (60231)] INFO : Installing Rails3 Error instrumentation
+[10/15/13 22:00:05 +0800 magic-macbook.local (60231)] INFO : Finished instrumentation
+[10/15/13 22:01:57 +0800 magic-macbook.local (61346)] INFO : Starting the New Relic agent in "test" environment.
+[10/15/13 22:01:57 +0800 magic-macbook.local (61346)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "test" section of your newrelic.yml.
+[10/15/13 22:01:57 +0800 magic-macbook.local (61346)] INFO : Reading configuration from 
+[10/15/13 22:01:57 +0800 magic-macbook.local (61346)] ERROR : Unable to read configuration file : no implicit conversion of nil into String
+[10/15/13 22:01:57 +0800 magic-macbook.local (61346)] INFO : Environment: test
+[10/15/13 22:01:57 +0800 magic-macbook.local (61346)] INFO : No known dispatcher detected.
+[10/15/13 22:01:57 +0800 magic-macbook.local (61346)] INFO : Application: test
+[10/15/13 22:01:57 +0800 magic-macbook.local (61346)] WARN : No license key found in newrelic.yml config. This often means your newrelic.yml is missing a section for the running environment 'test'
+[10/15/13 22:01:57 +0800 magic-macbook.local (61346)] INFO : Installing ActiveRecord instrumentation
+[10/15/13 22:01:57 +0800 magic-macbook.local (61346)] INFO : Installing Dalli Memcache instrumentation
+[10/15/13 22:01:57 +0800 magic-macbook.local (61346)] INFO : Installing Net instrumentation
+[10/15/13 22:01:57 +0800 magic-macbook.local (61346)] INFO : Installing Rails 3 Controller instrumentation
+[10/15/13 22:01:57 +0800 magic-macbook.local (61346)] INFO : Installing Rails 3.1/3.2 view instrumentation
+[10/15/13 22:01:57 +0800 magic-macbook.local (61346)] INFO : Installing Rails3 Error instrumentation
+[10/15/13 22:01:57 +0800 magic-macbook.local (61346)] INFO : Finished instrumentation
+[10/15/13 22:04:58 +0800 magic-macbook.local (62975)] INFO : Starting the New Relic agent in "test" environment.
+[10/15/13 22:04:58 +0800 magic-macbook.local (62975)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "test" section of your newrelic.yml.
+[10/15/13 22:04:58 +0800 magic-macbook.local (62975)] INFO : Reading configuration from 
+[10/15/13 22:04:58 +0800 magic-macbook.local (62975)] ERROR : Unable to read configuration file : no implicit conversion of nil into String
+[10/15/13 22:04:58 +0800 magic-macbook.local (62975)] INFO : Environment: test
+[10/15/13 22:04:58 +0800 magic-macbook.local (62975)] INFO : No known dispatcher detected.
+[10/15/13 22:04:58 +0800 magic-macbook.local (62975)] INFO : Application: test
+[10/15/13 22:04:58 +0800 magic-macbook.local (62975)] WARN : No license key found in newrelic.yml config. This often means your newrelic.yml is missing a section for the running environment 'test'
+[10/15/13 22:04:58 +0800 magic-macbook.local (62975)] INFO : Installing ActiveRecord instrumentation
+[10/15/13 22:04:58 +0800 magic-macbook.local (62975)] INFO : Installing Dalli Memcache instrumentation
+[10/15/13 22:04:58 +0800 magic-macbook.local (62975)] INFO : Installing Net instrumentation
+[10/15/13 22:04:58 +0800 magic-macbook.local (62975)] INFO : Installing Rails 3 Controller instrumentation
+[10/15/13 22:04:58 +0800 magic-macbook.local (62975)] INFO : Installing Rails 3.1/3.2 view instrumentation
+[10/15/13 22:04:58 +0800 magic-macbook.local (62975)] INFO : Installing Rails3 Error instrumentation
+[10/15/13 22:04:58 +0800 magic-macbook.local (62975)] INFO : Finished instrumentation
+[10/15/13 22:22:46 +0800 magic-macbook.local (73124)] INFO : Starting the New Relic agent in "test" environment.
+[10/15/13 22:22:46 +0800 magic-macbook.local (73124)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "test" section of your newrelic.yml.
+[10/15/13 22:22:46 +0800 magic-macbook.local (73124)] INFO : Reading configuration from 
+[10/15/13 22:22:46 +0800 magic-macbook.local (73124)] ERROR : Unable to read configuration file : no implicit conversion of nil into String
+[10/15/13 22:22:46 +0800 magic-macbook.local (73124)] INFO : Environment: test
+[10/15/13 22:22:46 +0800 magic-macbook.local (73124)] INFO : No known dispatcher detected.
+[10/15/13 22:22:46 +0800 magic-macbook.local (73124)] INFO : Application: test
+[10/15/13 22:22:46 +0800 magic-macbook.local (73124)] WARN : No license key found in newrelic.yml config. This often means your newrelic.yml is missing a section for the running environment 'test'
+[10/15/13 22:22:46 +0800 magic-macbook.local (73124)] INFO : Installing ActiveRecord instrumentation
+[10/15/13 22:22:46 +0800 magic-macbook.local (73124)] INFO : Installing Dalli Memcache instrumentation
+[10/15/13 22:22:46 +0800 magic-macbook.local (73124)] INFO : Installing Net instrumentation
+[10/15/13 22:22:46 +0800 magic-macbook.local (73124)] INFO : Installing Rails 3 Controller instrumentation
+[10/15/13 22:22:46 +0800 magic-macbook.local (73124)] INFO : Installing Rails 3.1/3.2 view instrumentation
+[10/15/13 22:22:46 +0800 magic-macbook.local (73124)] INFO : Installing Rails3 Error instrumentation
+[10/15/13 22:22:46 +0800 magic-macbook.local (73124)] INFO : Finished instrumentation
+[10/15/13 22:23:30 +0800 magic-macbook.local (73631)] INFO : Starting the New Relic agent in "test" environment.
+[10/15/13 22:23:30 +0800 magic-macbook.local (73631)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "test" section of your newrelic.yml.
+[10/15/13 22:23:30 +0800 magic-macbook.local (73631)] INFO : Reading configuration from 
+[10/15/13 22:23:30 +0800 magic-macbook.local (73631)] ERROR : Unable to read configuration file : no implicit conversion of nil into String
+[10/15/13 22:23:30 +0800 magic-macbook.local (73631)] INFO : Environment: test
+[10/15/13 22:23:30 +0800 magic-macbook.local (73631)] INFO : No known dispatcher detected.
+[10/15/13 22:23:30 +0800 magic-macbook.local (73631)] INFO : Application: test
+[10/15/13 22:23:30 +0800 magic-macbook.local (73631)] WARN : No license key found in newrelic.yml config. This often means your newrelic.yml is missing a section for the running environment 'test'
+[10/15/13 22:23:30 +0800 magic-macbook.local (73631)] INFO : Installing ActiveRecord instrumentation
+[10/15/13 22:23:30 +0800 magic-macbook.local (73631)] INFO : Installing Dalli Memcache instrumentation
+[10/15/13 22:23:30 +0800 magic-macbook.local (73631)] INFO : Installing Net instrumentation
+[10/15/13 22:23:30 +0800 magic-macbook.local (73631)] INFO : Installing Rails 3 Controller instrumentation
+[10/15/13 22:23:30 +0800 magic-macbook.local (73631)] INFO : Installing Rails 3.1/3.2 view instrumentation
+[10/15/13 22:23:30 +0800 magic-macbook.local (73631)] INFO : Installing Rails3 Error instrumentation
+[10/15/13 22:23:30 +0800 magic-macbook.local (73631)] INFO : Finished instrumentation
+[10/15/13 22:23:49 +0800 magic-macbook.local (73756)] INFO : Starting the New Relic agent in "test" environment.
+[10/15/13 22:23:49 +0800 magic-macbook.local (73756)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "test" section of your newrelic.yml.
+[10/15/13 22:23:49 +0800 magic-macbook.local (73756)] INFO : Reading configuration from 
+[10/15/13 22:23:49 +0800 magic-macbook.local (73756)] ERROR : Unable to read configuration file : no implicit conversion of nil into String
+[10/15/13 22:23:49 +0800 magic-macbook.local (73756)] INFO : Environment: test
+[10/15/13 22:23:49 +0800 magic-macbook.local (73756)] INFO : No known dispatcher detected.
+[10/15/13 22:23:49 +0800 magic-macbook.local (73756)] INFO : Application: test
+[10/15/13 22:23:49 +0800 magic-macbook.local (73756)] WARN : No license key found in newrelic.yml config. This often means your newrelic.yml is missing a section for the running environment 'test'
+[10/15/13 22:23:49 +0800 magic-macbook.local (73756)] INFO : Installing ActiveRecord instrumentation
+[10/15/13 22:23:49 +0800 magic-macbook.local (73756)] INFO : Installing Dalli Memcache instrumentation
+[10/15/13 22:23:49 +0800 magic-macbook.local (73756)] INFO : Installing Net instrumentation
+[10/15/13 22:23:49 +0800 magic-macbook.local (73756)] INFO : Installing Rails 3 Controller instrumentation
+[10/15/13 22:23:49 +0800 magic-macbook.local (73756)] INFO : Installing Rails 3.1/3.2 view instrumentation
+[10/15/13 22:23:49 +0800 magic-macbook.local (73756)] INFO : Installing Rails3 Error instrumentation
+[10/15/13 22:23:49 +0800 magic-macbook.local (73756)] INFO : Finished instrumentation
+[10/15/13 22:24:01 +0800 magic-macbook.local (73872)] INFO : Starting the New Relic agent in "test" environment.
+[10/15/13 22:24:01 +0800 magic-macbook.local (73872)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "test" section of your newrelic.yml.
+[10/15/13 22:24:01 +0800 magic-macbook.local (73872)] INFO : Reading configuration from 
+[10/15/13 22:24:01 +0800 magic-macbook.local (73872)] ERROR : Unable to read configuration file : no implicit conversion of nil into String
+[10/15/13 22:24:01 +0800 magic-macbook.local (73872)] INFO : Environment: test
+[10/15/13 22:24:01 +0800 magic-macbook.local (73872)] INFO : No known dispatcher detected.
+[10/15/13 22:24:01 +0800 magic-macbook.local (73872)] INFO : Application: test
+[10/15/13 22:24:01 +0800 magic-macbook.local (73872)] WARN : No license key found in newrelic.yml config. This often means your newrelic.yml is missing a section for the running environment 'test'
+[10/15/13 22:24:01 +0800 magic-macbook.local (73872)] INFO : Installing ActiveRecord instrumentation
+[10/15/13 22:24:01 +0800 magic-macbook.local (73872)] INFO : Installing Dalli Memcache instrumentation
+[10/15/13 22:24:01 +0800 magic-macbook.local (73872)] INFO : Installing Net instrumentation
+[10/15/13 22:24:01 +0800 magic-macbook.local (73872)] INFO : Installing Rails 3 Controller instrumentation
+[10/15/13 22:24:01 +0800 magic-macbook.local (73872)] INFO : Installing Rails 3.1/3.2 view instrumentation
+[10/15/13 22:24:01 +0800 magic-macbook.local (73872)] INFO : Installing Rails3 Error instrumentation
+[10/15/13 22:24:01 +0800 magic-macbook.local (73872)] INFO : Finished instrumentation
+[10/15/13 22:25:37 +0800 magic-macbook.local (74794)] INFO : Starting the New Relic agent in "test" environment.
+[10/15/13 22:25:37 +0800 magic-macbook.local (74794)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "test" section of your newrelic.yml.
+[10/15/13 22:25:37 +0800 magic-macbook.local (74794)] INFO : Reading configuration from 
+[10/15/13 22:25:37 +0800 magic-macbook.local (74794)] ERROR : Unable to read configuration file : no implicit conversion of nil into String
+[10/15/13 22:25:37 +0800 magic-macbook.local (74794)] INFO : Environment: test
+[10/15/13 22:25:37 +0800 magic-macbook.local (74794)] INFO : No known dispatcher detected.
+[10/15/13 22:25:37 +0800 magic-macbook.local (74794)] INFO : Application: test
+[10/15/13 22:25:37 +0800 magic-macbook.local (74794)] WARN : No license key found in newrelic.yml config. This often means your newrelic.yml is missing a section for the running environment 'test'
+[10/15/13 22:25:37 +0800 magic-macbook.local (74794)] INFO : Installing ActiveRecord instrumentation
+[10/15/13 22:25:37 +0800 magic-macbook.local (74794)] INFO : Installing Dalli Memcache instrumentation
+[10/15/13 22:25:37 +0800 magic-macbook.local (74794)] INFO : Installing Net instrumentation
+[10/15/13 22:25:37 +0800 magic-macbook.local (74794)] INFO : Installing Rails 3 Controller instrumentation
+[10/15/13 22:25:37 +0800 magic-macbook.local (74794)] INFO : Installing Rails 3.1/3.2 view instrumentation
+[10/15/13 22:25:37 +0800 magic-macbook.local (74794)] INFO : Installing Rails3 Error instrumentation
+[10/15/13 22:25:37 +0800 magic-macbook.local (74794)] INFO : Finished instrumentation
+[10/15/13 22:25:59 +0800 magic-macbook.local (75003)] INFO : Starting the New Relic agent in "test" environment.
+[10/15/13 22:25:59 +0800 magic-macbook.local (75003)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "test" section of your newrelic.yml.
+[10/15/13 22:25:59 +0800 magic-macbook.local (75003)] INFO : Reading configuration from 
+[10/15/13 22:25:59 +0800 magic-macbook.local (75003)] ERROR : Unable to read configuration file : no implicit conversion of nil into String
+[10/15/13 22:25:59 +0800 magic-macbook.local (75003)] INFO : Environment: test
+[10/15/13 22:25:59 +0800 magic-macbook.local (75003)] INFO : No known dispatcher detected.
+[10/15/13 22:25:59 +0800 magic-macbook.local (75003)] INFO : Application: test
+[10/15/13 22:25:59 +0800 magic-macbook.local (75003)] WARN : No license key found in newrelic.yml config. This often means your newrelic.yml is missing a section for the running environment 'test'
+[10/15/13 22:25:59 +0800 magic-macbook.local (75003)] INFO : Installing ActiveRecord instrumentation
+[10/15/13 22:25:59 +0800 magic-macbook.local (75003)] INFO : Installing Dalli Memcache instrumentation
+[10/15/13 22:25:59 +0800 magic-macbook.local (75003)] INFO : Installing Net instrumentation
+[10/15/13 22:25:59 +0800 magic-macbook.local (75003)] INFO : Installing Rails 3 Controller instrumentation
+[10/15/13 22:25:59 +0800 magic-macbook.local (75003)] INFO : Installing Rails 3.1/3.2 view instrumentation
+[10/15/13 22:25:59 +0800 magic-macbook.local (75003)] INFO : Installing Rails3 Error instrumentation
+[10/15/13 22:25:59 +0800 magic-macbook.local (75003)] INFO : Finished instrumentation
+[10/15/13 22:31:29 +0800 magic-macbook.local (78432)] INFO : Starting the New Relic agent in "test" environment.
+[10/15/13 22:31:29 +0800 magic-macbook.local (78432)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "test" section of your newrelic.yml.
+[10/15/13 22:31:29 +0800 magic-macbook.local (78432)] INFO : Reading configuration from 
+[10/15/13 22:31:29 +0800 magic-macbook.local (78432)] ERROR : Unable to read configuration file : no implicit conversion of nil into String
+[10/15/13 22:31:29 +0800 magic-macbook.local (78432)] INFO : Environment: test
+[10/15/13 22:31:29 +0800 magic-macbook.local (78432)] INFO : No known dispatcher detected.
+[10/15/13 22:31:29 +0800 magic-macbook.local (78432)] INFO : Application: test
+[10/15/13 22:31:29 +0800 magic-macbook.local (78432)] WARN : No license key found in newrelic.yml config. This often means your newrelic.yml is missing a section for the running environment 'test'
+[10/15/13 22:31:29 +0800 magic-macbook.local (78432)] INFO : Installing ActiveRecord instrumentation
+[10/15/13 22:31:29 +0800 magic-macbook.local (78432)] INFO : Installing Dalli Memcache instrumentation
+[10/15/13 22:31:29 +0800 magic-macbook.local (78432)] INFO : Installing Net instrumentation
+[10/15/13 22:31:29 +0800 magic-macbook.local (78432)] INFO : Installing Rails 3 Controller instrumentation
+[10/15/13 22:31:29 +0800 magic-macbook.local (78432)] INFO : Installing Rails 3.1/3.2 view instrumentation
+[10/15/13 22:31:29 +0800 magic-macbook.local (78432)] INFO : Installing Rails3 Error instrumentation
+[10/15/13 22:31:29 +0800 magic-macbook.local (78432)] INFO : Finished instrumentation
+[10/15/13 22:32:05 +0800 magic-macbook.local (78753)] INFO : Starting the New Relic agent in "test" environment.
+[10/15/13 22:32:05 +0800 magic-macbook.local (78753)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "test" section of your newrelic.yml.
+[10/15/13 22:32:05 +0800 magic-macbook.local (78753)] INFO : Reading configuration from 
+[10/15/13 22:32:05 +0800 magic-macbook.local (78753)] ERROR : Unable to read configuration file : no implicit conversion of nil into String
+[10/15/13 22:32:05 +0800 magic-macbook.local (78753)] INFO : Environment: test
+[10/15/13 22:32:05 +0800 magic-macbook.local (78753)] INFO : No known dispatcher detected.
+[10/15/13 22:32:05 +0800 magic-macbook.local (78753)] INFO : Application: test
+[10/15/13 22:32:05 +0800 magic-macbook.local (78753)] WARN : No license key found in newrelic.yml config. This often means your newrelic.yml is missing a section for the running environment 'test'
+[10/15/13 22:32:05 +0800 magic-macbook.local (78753)] INFO : Installing ActiveRecord instrumentation
+[10/15/13 22:32:05 +0800 magic-macbook.local (78753)] INFO : Installing Dalli Memcache instrumentation
+[10/15/13 22:32:05 +0800 magic-macbook.local (78753)] INFO : Installing Net instrumentation
+[10/15/13 22:32:05 +0800 magic-macbook.local (78753)] INFO : Installing Rails 3 Controller instrumentation
+[10/15/13 22:32:05 +0800 magic-macbook.local (78753)] INFO : Installing Rails 3.1/3.2 view instrumentation
+[10/15/13 22:32:05 +0800 magic-macbook.local (78753)] INFO : Installing Rails3 Error instrumentation
+[10/15/13 22:32:05 +0800 magic-macbook.local (78753)] INFO : Finished instrumentation
+[10/15/13 22:32:36 +0800 magic-macbook.local (79066)] INFO : Starting the New Relic agent in "test" environment.
+[10/15/13 22:32:36 +0800 magic-macbook.local (79066)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "test" section of your newrelic.yml.
+[10/15/13 22:32:36 +0800 magic-macbook.local (79066)] INFO : Reading configuration from 
+[10/15/13 22:32:36 +0800 magic-macbook.local (79066)] ERROR : Unable to read configuration file : no implicit conversion of nil into String
+[10/15/13 22:32:36 +0800 magic-macbook.local (79066)] INFO : Environment: test
+[10/15/13 22:32:36 +0800 magic-macbook.local (79066)] INFO : No known dispatcher detected.
+[10/15/13 22:32:36 +0800 magic-macbook.local (79066)] INFO : Application: test
+[10/15/13 22:32:36 +0800 magic-macbook.local (79066)] WARN : No license key found in newrelic.yml config. This often means your newrelic.yml is missing a section for the running environment 'test'
+[10/15/13 22:32:36 +0800 magic-macbook.local (79066)] INFO : Installing ActiveRecord instrumentation
+[10/15/13 22:32:36 +0800 magic-macbook.local (79066)] INFO : Installing Dalli Memcache instrumentation
+[10/15/13 22:32:36 +0800 magic-macbook.local (79066)] INFO : Installing Net instrumentation
+[10/15/13 22:32:36 +0800 magic-macbook.local (79066)] INFO : Installing Rails 3 Controller instrumentation
+[10/15/13 22:32:36 +0800 magic-macbook.local (79066)] INFO : Installing Rails 3.1/3.2 view instrumentation
+[10/15/13 22:32:36 +0800 magic-macbook.local (79066)] INFO : Installing Rails3 Error instrumentation
+[10/15/13 22:32:36 +0800 magic-macbook.local (79066)] INFO : Finished instrumentation
+[10/15/13 22:33:09 +0800 magic-macbook.local (79379)] INFO : Starting the New Relic agent in "test" environment.
+[10/15/13 22:33:09 +0800 magic-macbook.local (79379)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "test" section of your newrelic.yml.
+[10/15/13 22:33:09 +0800 magic-macbook.local (79379)] INFO : Reading configuration from 
+[10/15/13 22:33:09 +0800 magic-macbook.local (79379)] ERROR : Unable to read configuration file : no implicit conversion of nil into String
+[10/15/13 22:33:09 +0800 magic-macbook.local (79379)] INFO : Environment: test
+[10/15/13 22:33:09 +0800 magic-macbook.local (79379)] INFO : No known dispatcher detected.
+[10/15/13 22:33:09 +0800 magic-macbook.local (79379)] INFO : Application: test
+[10/15/13 22:33:09 +0800 magic-macbook.local (79379)] WARN : No license key found in newrelic.yml config. This often means your newrelic.yml is missing a section for the running environment 'test'
+[10/15/13 22:33:09 +0800 magic-macbook.local (79379)] INFO : Installing ActiveRecord instrumentation
+[10/15/13 22:33:09 +0800 magic-macbook.local (79379)] INFO : Installing Dalli Memcache instrumentation
+[10/15/13 22:33:09 +0800 magic-macbook.local (79379)] INFO : Installing Net instrumentation
+[10/15/13 22:33:09 +0800 magic-macbook.local (79379)] INFO : Installing Rails 3 Controller instrumentation
+[10/15/13 22:33:09 +0800 magic-macbook.local (79379)] INFO : Installing Rails 3.1/3.2 view instrumentation
+[10/15/13 22:33:09 +0800 magic-macbook.local (79379)] INFO : Installing Rails3 Error instrumentation
+[10/15/13 22:33:09 +0800 magic-macbook.local (79379)] INFO : Finished instrumentation
+[10/15/13 22:35:50 +0800 magic-macbook.local (80889)] INFO : Starting the New Relic agent in "test" environment.
+[10/15/13 22:35:50 +0800 magic-macbook.local (80889)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "test" section of your newrelic.yml.
+[10/15/13 22:35:50 +0800 magic-macbook.local (80889)] INFO : Reading configuration from 
+[10/15/13 22:35:50 +0800 magic-macbook.local (80889)] ERROR : Unable to read configuration file : no implicit conversion of nil into String
+[10/15/13 22:35:50 +0800 magic-macbook.local (80889)] INFO : Environment: test
+[10/15/13 22:35:50 +0800 magic-macbook.local (80889)] INFO : No known dispatcher detected.
+[10/15/13 22:35:50 +0800 magic-macbook.local (80889)] INFO : Application: test
+[10/15/13 22:35:50 +0800 magic-macbook.local (80889)] WARN : No license key found in newrelic.yml config. This often means your newrelic.yml is missing a section for the running environment 'test'
+[10/15/13 22:35:50 +0800 magic-macbook.local (80889)] INFO : Installing ActiveRecord instrumentation
+[10/15/13 22:35:50 +0800 magic-macbook.local (80889)] INFO : Installing Dalli Memcache instrumentation
+[10/15/13 22:35:50 +0800 magic-macbook.local (80889)] INFO : Installing Net instrumentation
+[10/15/13 22:35:50 +0800 magic-macbook.local (80889)] INFO : Installing Rails 3 Controller instrumentation
+[10/15/13 22:35:51 +0800 magic-macbook.local (80889)] INFO : Installing Rails 3.1/3.2 view instrumentation
+[10/15/13 22:35:51 +0800 magic-macbook.local (80889)] INFO : Installing Rails3 Error instrumentation
+[10/15/13 22:35:51 +0800 magic-macbook.local (80889)] INFO : Finished instrumentation
+[10/15/13 22:38:08 +0800 magic-macbook.local (82152)] INFO : Starting the New Relic agent in "test" environment.
+[10/15/13 22:38:08 +0800 magic-macbook.local (82152)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "test" section of your newrelic.yml.
+[10/15/13 22:38:08 +0800 magic-macbook.local (82152)] INFO : Reading configuration from 
+[10/15/13 22:38:08 +0800 magic-macbook.local (82152)] ERROR : Unable to read configuration file : no implicit conversion of nil into String
+[10/15/13 22:38:08 +0800 magic-macbook.local (82152)] INFO : Environment: test
+[10/15/13 22:38:08 +0800 magic-macbook.local (82152)] INFO : No known dispatcher detected.
+[10/15/13 22:38:08 +0800 magic-macbook.local (82152)] INFO : Application: test
+[10/15/13 22:38:08 +0800 magic-macbook.local (82152)] WARN : No license key found in newrelic.yml config. This often means your newrelic.yml is missing a section for the running environment 'test'
+[10/15/13 22:38:08 +0800 magic-macbook.local (82152)] INFO : Installing ActiveRecord instrumentation
+[10/15/13 22:38:08 +0800 magic-macbook.local (82152)] INFO : Installing Dalli Memcache instrumentation
+[10/15/13 22:38:08 +0800 magic-macbook.local (82152)] INFO : Installing Net instrumentation
+[10/15/13 22:38:08 +0800 magic-macbook.local (82152)] INFO : Installing Rails 3 Controller instrumentation
+[10/15/13 22:38:08 +0800 magic-macbook.local (82152)] INFO : Installing Rails 3.1/3.2 view instrumentation
+[10/15/13 22:38:08 +0800 magic-macbook.local (82152)] INFO : Installing Rails3 Error instrumentation
+[10/15/13 22:38:08 +0800 magic-macbook.local (82152)] INFO : Finished instrumentation
+[10/15/13 22:40:41 +0800 magic-macbook.local (83789)] INFO : Starting the New Relic agent in "test" environment.
+[10/15/13 22:40:41 +0800 magic-macbook.local (83789)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "test" section of your newrelic.yml.
+[10/15/13 22:40:41 +0800 magic-macbook.local (83789)] INFO : Reading configuration from 
+[10/15/13 22:40:41 +0800 magic-macbook.local (83789)] ERROR : Unable to read configuration file : no implicit conversion of nil into String
+[10/15/13 22:40:41 +0800 magic-macbook.local (83789)] INFO : Environment: test
+[10/15/13 22:40:41 +0800 magic-macbook.local (83789)] INFO : No known dispatcher detected.
+[10/15/13 22:40:41 +0800 magic-macbook.local (83789)] INFO : Application: test
+[10/15/13 22:40:41 +0800 magic-macbook.local (83789)] WARN : No license key found in newrelic.yml config. This often means your newrelic.yml is missing a section for the running environment 'test'
+[10/15/13 22:40:41 +0800 magic-macbook.local (83789)] INFO : Installing ActiveRecord instrumentation
+[10/15/13 22:40:41 +0800 magic-macbook.local (83789)] INFO : Installing Dalli Memcache instrumentation
+[10/15/13 22:40:41 +0800 magic-macbook.local (83789)] INFO : Installing Net instrumentation
+[10/15/13 22:40:41 +0800 magic-macbook.local (83789)] INFO : Installing Rails 3 Controller instrumentation
+[10/15/13 22:40:41 +0800 magic-macbook.local (83789)] INFO : Installing Rails 3.1/3.2 view instrumentation
+[10/15/13 22:40:41 +0800 magic-macbook.local (83789)] INFO : Installing Rails3 Error instrumentation
+[10/15/13 22:40:41 +0800 magic-macbook.local (83789)] INFO : Finished instrumentation
+[10/15/13 22:41:01 +0800 magic-macbook.local (84007)] INFO : Starting the New Relic agent in "test" environment.
+[10/15/13 22:41:01 +0800 magic-macbook.local (84007)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "test" section of your newrelic.yml.
+[10/15/13 22:41:01 +0800 magic-macbook.local (84007)] INFO : Reading configuration from 
+[10/15/13 22:41:01 +0800 magic-macbook.local (84007)] ERROR : Unable to read configuration file : no implicit conversion of nil into String
+[10/15/13 22:41:01 +0800 magic-macbook.local (84007)] INFO : Environment: test
+[10/15/13 22:41:01 +0800 magic-macbook.local (84007)] INFO : No known dispatcher detected.
+[10/15/13 22:41:01 +0800 magic-macbook.local (84007)] INFO : Application: test
+[10/15/13 22:41:01 +0800 magic-macbook.local (84007)] WARN : No license key found in newrelic.yml config. This often means your newrelic.yml is missing a section for the running environment 'test'
+[10/15/13 22:41:01 +0800 magic-macbook.local (84007)] INFO : Installing ActiveRecord instrumentation
+[10/15/13 22:41:01 +0800 magic-macbook.local (84007)] INFO : Installing Dalli Memcache instrumentation
+[10/15/13 22:41:01 +0800 magic-macbook.local (84007)] INFO : Installing Net instrumentation
+[10/15/13 22:41:01 +0800 magic-macbook.local (84007)] INFO : Installing Rails 3 Controller instrumentation
+[10/15/13 22:41:01 +0800 magic-macbook.local (84007)] INFO : Installing Rails 3.1/3.2 view instrumentation
+[10/15/13 22:41:01 +0800 magic-macbook.local (84007)] INFO : Installing Rails3 Error instrumentation
+[10/15/13 22:41:01 +0800 magic-macbook.local (84007)] INFO : Finished instrumentation

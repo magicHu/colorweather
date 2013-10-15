@@ -8,6 +8,7 @@ Colorweather::Application.routes.draw do
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
   mount Weather::API => '/'
+  mount Weather::APIV2 => '/'
   mount Wechat::API => '/'
 
   # The priority is based upon order of creation:
