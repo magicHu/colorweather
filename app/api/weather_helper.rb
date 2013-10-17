@@ -8,6 +8,13 @@ module WeatherHelper
 
   @@WEATHER_CACHE_EXPIRE_TIME = 30.minutes
 
+  @@WEATHER = ["晴","多云","阴", "阵雨", "雷阵雨","雷阵雨",
+    "雨夹雪","毛毛雨","小雨", "中雨", "大雨","暴雨",
+    "晴转雪","小雪","中雪", "大雪", "暴风雪","浮尘",
+    "雨夹雪","大风","毛毛雨","小雨", "中雨", "大雨",
+    "暴雨","小雪","中雪", "大雪", "扬沙","沙尘暴","大风"
+    ]
+
   def get_weather_info_by_cityno_v2(city_no)
     begin
       raise unless city_no
@@ -38,8 +45,12 @@ module WeatherHelper
         # 6天预报
         week_weather = get_week_weather_info_v2(city_no)['f']['f1']
         (1...7).each do |i|
+          img_num = "#{week_weather[i]['fa']}".to_i
+          weather = ""
+          weather = @@WEATHER[img_num] if img_num < @@WEATHER.size
+
           weather_info['forecasts'] << 
-            {'temp' => "#{week_weather[i]['fd']}℃~#{week_weather[i]['fc']}℃", 'weather' => "", 'img' => "#{week_weather[i]['fa']}".to_i, 'wind' => ""}
+            {'temp' => "#{week_weather[i]['fd']}℃~#{week_weather[i]['fc']}℃", 'weather' => weather, 'img' => img_num, 'wind' => ""}
         end
 
         weather_info
