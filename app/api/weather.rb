@@ -16,10 +16,13 @@ module Weather
         requires :cityno, :type => String, :desc => "请输入城市编号."
       end
       get 'city/:cityno' do
-        weather_info = get_weather_info_by_cityno(params[:cityno])
-        unless weather_info
-          error!('Unexpect city info', 400)
-        end
+        #weather_info = get_weather_info_by_cityno(params[:cityno])
+        #unless weather_info
+          weather_info = get_weather_info_by_cityno_v2(params[:cityno])
+          unless weather_info
+            error!('Unexpect city info', 400)
+          end
+        #end
         weather_info
       end
 
